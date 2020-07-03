@@ -1,0 +1,400 @@
+* {
+  box-sizing: inherit;
+}
+*::selection {
+  background-color: #eee;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+
+  font-family: "Helvetica Neue", -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  /*color: #333;*/
+
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+
+  border-top: 5px solid black;
+  box-sizing: border-box;
+
+  overflow-wrap: break-word;
+}
+body > header {
+  background-color: #000;
+  /*border-bottom: 1px solid #dadada;*/
+  padding-left: 32px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+body > header h1 {
+  font-size: 17px;
+  margin: 0px;
+}
+
+@keyframes loading {
+  0%   {color: white;}
+  50%  {color: #CCCCCC;}
+  100% {color: white;}
+}
+.blink {
+  color: white;
+  animation-name: loading;
+  animation-delay: 3s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+.loading {
+  /*color: #CCCCCC;*/
+  font-size: 80px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  /*text-decoration-style: dashed;*/
+}
+
+
+pre, code {
+  font-family: Inconsolata, monospace;
+  font-weight: 300;
+  font-size: 0.9;
+  line-height: 1.2;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  /*font-family: "Barlow Condensed";*/
+  font-weight: 500;
+  color: black;
+}
+
+
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-bottom: 0.4em;
+}
+
+h2 {
+  font-size: 30px;
+  /*margin-block-start: 0px;*/
+}
+
+h3 {
+  font-size: 24px;
+  /*margin-block-start: 0px;*/
+}
+
+.cursive {
+  font-family: Caveat, cursive;
+  font-size: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* sigplan */
+/*.sigplan {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7em;
+  color: #424242;
+}
+
+
+.sigplan h1 {
+  font-family: "Roboto Condensed";
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+.sigplan h2 {
+  font-family: "Roboto Condensed";
+  font-size: 26px;
+  font-weight: normal;
+  color: black;
+}
+.sigplan h3 {
+  font-family: "Roboto Condensed";
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+.sigplan strong {
+  font-family: "Roboto Condensed";
+  font-weight: 500;
+  color: black;
+}
+*//* end sigplan */
+
+
+
+
+li > p { margin-bottom: 7px; margin-top: 7px;}
+li > :first-child { margin-bottom: 0; margin-top: 0; }
+
+ul { padding-inline-start: 20px; }
+
+blockquote {
+  margin-inline-start: 20px;
+  margin-inline-end: 0px;
+}
+
+
+.brokenLink {
+  color: red;
+}
+
+.outerPanel {
+/*perspective-origin: right;*/
+/*perspective: 1000px;*/
+
+  /*background-color: #fafafc;*/
+
+  padding-left: 32px;
+
+  /*flex-grow: 1;*/
+  /*flex-shrink: 1;*/
+  /*flex-basis: 100%;*/
+  /*height: 100vh;*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  /*justify-content: center;*/
+  /*border: 1px solid black;*/
+  /*padding: 10px;*/
+  overflow-x: scroll;
+}
+
+.panel {
+/*transform-style: preserve-3d;
+transform: rotateY(30deg);
+transform-origin: left;
+*/
+  /*float: left;*/
+  /*height: 100%;*/
+  /*min-width: 200px;*/
+  /*width: intrinsic;*/
+  max-width: 600px;
+  max-height: 100%;
+/*  padding: 32px;
+*//*  display: table-cell;
+*/
+  /*display: inline-block;*/
+  overflow-y: scroll;
+  /*overflow-x: hidden;*/
+  /*border: 1px solid black;*/
+  /*margin-top: auto;*/
+  margin-bottom: auto;
+  /*padding: 3px;*/
+}
+.nonempty {
+  min-width: 400px;
+}
+
+
+
+.small {
+  /*max-width: 300px;*/
+  /*min-width: 300px;*/
+}
+.large {
+  /*max-width: 850px;*/
+  /*min-width: 850px;*/
+}
+
+
+article {
+  /*background-color: white;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+
+  min-width: 200px;
+
+  /*border: 1px solid white;*/
+  /*padding: 32px;*/
+  /*margin-top: 32px;*/
+  /*margin-bottom: 32px;*/
+  /*border-top: 1px solid #eee;*/
+  /*border-bottom: 1px solid #eee;*/
+  /*border: 1px solid #eee;*/
+  /*margin-top: 32px;*/
+  /*margin-bottom: 32px;*/
+  /*border: 1px solid white;*/
+  /*min-width: 300px*/
+}
+
+article > nav {
+  color: white;
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
+article > nav:hover {
+  color: #999;
+}
+
+small {
+  /*font-size: 12px;*/
+  /*color: #999;*/
+}
+
+h1 a {
+  text-decoration: none;
+}
+
+.tooltip {
+  position: relative;
+  /*display: inline-block;*/
+  /*border: 1px dotted black;*/
+}
+
+.tooltip .tooltiptext {
+  font-family: "Helvetica Neue", -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 2;
+
+/*  visibility: hidden; */
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  /*padding: 5px 0;*/
+  display: block;
+/*
+  position: absolute;
+  top: 110%;
+  left: 0%;
+  z-index: 1;
+*/
+  /*margin-left: -60px;*/
+}
+
+@media only screen and (min-width: 600px) {
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+}
+
+.tooltip .tooltiptext span {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/*.tooltip .tooltiptext {
+  font-size: 16px;
+  line-height: 32px;
+
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 10;
+  top: -5px;
+  bottom: 0px;
+  left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+*/
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+h1:hover .tooltiptext {
+  visibility: visible;
+}
+h2:hover .tooltiptext {
+  visibility: visible;
+}
+h3:hover .tooltiptext {
+  visibility: visible;
+}
+
+.backlinks {
+  margin-top: 1em;
+}
+
+/* editor */
+/* this will capture the o div, i.e., make output
+as a whole scroll in x direction */
+.editor_e div {
+  width: 100%;
+  overflow: auto;
+}
+
+/* input pane should scroll in x direction, too */
+.editor_p {
+  /*background-color: blue;*/
+  -webkit-user-modify: read-write-plaintext-only;
+  outline: none;
+  overflow: auto;
+}
+
+
+.middle {
+  /*background-color: white;*/
+  z-index: 0;
+  max-height: 100%;
+  max-width: 100px;
+  min-width: 100px;
+  overflow: hidden;
+  /*height: 1000px;  */
+}
+
+.middle canvas {
+  /*border: 1px solid black;*/
+  /*width: 100px;*/
+  /*height: 1000px;*/
+}
