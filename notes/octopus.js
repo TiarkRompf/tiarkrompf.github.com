@@ -14,7 +14,7 @@ function $$(href) {
 }
 
 function isValidLink(href) {
-  return href.startsWith("#/") && (href in articles)
+  return href.startsWith("?/") && (href in articles)
 }
 
 // ---------- drawing and scrolling ----------
@@ -254,21 +254,25 @@ function layoutHandler() {
 
 // ---------- navigation ----------
 
-function navigateTo(href) {
+function navigateTo(href,scroll=true) {
+  console.log("navigateTo "+href)
+
   if (!isValidLink(href))
     throw Error("page "+href+" does not exist")
 
   const elem = $$(href)
   elem.removeClass("hidden")
 
-  window.location.hash = href
+  //window.location.search = href
+  history.pushState({}, ""+elem.attr("title"), href)
 
   document.title = ""+elem.attr("title")
 
-  ga('set', 'page', href);
+  ga('set', 'page', href); // should use full url?
   ga('send', 'pageview');
 
-  elem[0].scrollIntoView()
+  if (scroll)
+    elem[0].scrollIntoView()
 }
 
 
@@ -278,16 +282,16 @@ function clickLink(ev) {
   const elem = ev.target
   const hhref = elem.attributes.href.value
   console.log("click",hhref, $$(hhref).hasClass("hidden"))
-  if (window.location.hash == hhref) {
+  if (window.location.search == hhref) {
     // hide
     $$(hhref).addClass("hidden")
     // navigate to the parent of the link
     let parent = elem.parentElement
-    while (parent && (!parent.id || !isValidLink("#"+parent.id))){
+    while (parent && (!parent.id || !isValidLink("?"+parent.id))){
       parent = parent.parentElement
     }
     if (parent) {
-      navigateTo("#"+parent.id)
+      navigateTo("?"+parent.id,false) // do not scroll
     }
   } else {
     // show
@@ -376,7 +380,7 @@ function buildNav(eid, slug) {
     let aux = $("<span class='tooltiptext'></span>")
 
     $("<span> << </span>").on("click", function(ev) {
-      const pid = $$("#"+eid).attr("parent")
+      const pid = $$("?"+eid).attr("parent")
       if (!pid) return
       const pelem = $$(pid)
       if (pelem.hasClass("hidden")) {
@@ -385,9 +389,9 @@ function buildNav(eid, slug) {
         navigateTo(pid)
       } else {
         pelem.addClass("hidden")
-        hideAllSiblings("#"+eid)
+        hideAllSiblings("?"+eid)
         // navigate to self
-        navigateTo("#"+eid)
+        navigateTo("?"+eid)
       }
       layoutHandler()
       ev.stopPropagation()
@@ -395,19 +399,19 @@ function buildNav(eid, slug) {
     }).appendTo(aux)
 
     $("<span> x </span>").on("click", function(ev) {
-      $$("#"+eid).addClass("hidden")
+      $$("?"+eid).addClass("hidden")
       layoutHandler()
       ev.stopPropagation()
       ev.preventDefault()
     }).appendTo(aux)
 
     $("<span> >> </span>").on("click", function(ev) {
-      if (anyChildVisible("#"+eid)) {
-        hideAllChildren("#"+eid, {})
+      if (anyChildVisible("?"+eid)) {
+        hideAllChildren("?"+eid, {})
         // navigate to self
-        window.location.hash = "#"+eid
+        window.location.search = "?"+eid
       } else {
-        const fst = showChildren("#"+eid)
+        const fst = showChildren("?"+eid)
         // navigate to first child
         if (fst) navigateTo(fst)
       }
@@ -426,7 +430,7 @@ function buildTitleNav(eid, slug, title) {
 
     let aux = buildNav(eid, slug)
 
-    let titleLink = $("<a href='"+ "#"+eid+"' class='backlink tooltip'></a>")
+    let titleLink = $("<a href='"+ "?"+eid+"' class='backlink tooltip'></a>")
     titleLink.text(title)
     titleLink.append(aux)
 
@@ -480,9 +484,9 @@ function buildArticles(edges) {
         if (href.startsWith(octopus_prefix))
           href = href.substring(octopus_prefix.length)
         if (href.startsWith("/")) //"_"
-          href = "#" + href
+          href = "?" + href
         else // relative
-          href = "#" + eid + href
+          href = "?" + eid + href
         if (!href.endsWith("/")) //"_"
           href = href + "/" //"_"
         e.attributes.href.value = href
@@ -499,7 +503,7 @@ function buildArticles(edges) {
     article.append(body)
     article.append(backlinks)
 
-    articles["#"+eid] = article
+    articles["?"+eid] = article
 
     runScripts(eid, article)
 
@@ -560,11 +564,11 @@ function extractAsides() {
 
     article.append(e.contents())
 
-    e.replaceWith("<div><a href=\"#"+eid+"\">"+summary+"&nbsp;>></a></div>")
+    e.replaceWith("<div><a href=\"?"+eid+"\">"+summary+"&nbsp;>></a></div>")
 
     article.append(backlinks)
 
-    articles["#"+eid] = article
+    articles["?"+eid] = article
 
     runScripts(eid, article)
 
@@ -640,7 +644,7 @@ function loadData(result) {
     extractAsides()
     visitLink(root, 1)
 
-    const target = window.location.hash || root
+    const target = window.location.search || root
     navigateTo(target)
 
     $(".loading").remove()
