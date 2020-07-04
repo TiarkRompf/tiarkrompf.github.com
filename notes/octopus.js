@@ -254,6 +254,22 @@ function layoutHandler() {
 
 // ---------- navigation ----------
 
+
+window.onpopstate = function(event) {
+
+  const href = document.location.search
+  const elem = $$(href)
+  elem.removeClass("hidden")
+
+  elem[0]?.scrollIntoView()
+
+  layoutHandler()
+
+//  alert(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
+}
+
+
+
 function navigateTo(href,scroll=true) {
   console.log("navigateTo "+href)
 
@@ -271,7 +287,7 @@ function navigateTo(href,scroll=true) {
   ga('set', 'page', href); // should use full url?
   ga('send', 'pageview');
 
-  if (scroll)
+  if (scroll && elem[0])
     elem[0].scrollIntoView()
 }
 
