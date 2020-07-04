@@ -391,7 +391,7 @@ function buildNav(eid, slug) {
         pelem.addClass("hidden")
         hideAllSiblings("?"+eid)
         // navigate to self
-        navigateTo("?"+eid)
+        navigateTo("?"+eid, false)
       }
       layoutHandler()
       ev.stopPropagation()
@@ -409,7 +409,7 @@ function buildNav(eid, slug) {
       if (anyChildVisible("?"+eid)) {
         hideAllChildren("?"+eid, {})
         // navigate to self
-        window.location.search = "?"+eid
+        navigateTo("?"+eid, false)
       } else {
         const fst = showChildren("?"+eid)
         // navigate to first child
@@ -433,6 +433,11 @@ function buildTitleNav(eid, slug, title) {
     let titleLink = $("<a href='"+ "?"+eid+"' class='backlink tooltip'></a>")
     titleLink.text(title)
     titleLink.append(aux)
+    titleLink.on("click", function(ev) {
+      navigateTo("?"+eid)
+      ev.stopPropagation()
+      ev.preventDefault()
+    })
 
     let h1 = $("<h1></h1>").append(titleLink)
 
