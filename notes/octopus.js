@@ -7,7 +7,14 @@ console.log("begin")
 const dataUrl = octopus_url || "page-data.json"
 const root = octopus_root || "/"
 
+const defaultTitle = document.title
+const defaultDescription = document.querySelector('meta[name="description"]').getAttribute("content")
+const defaultKeywords = document.querySelector('meta[name="keywords"]').getAttribute("content")
+const defaultAuthor = document.querySelector('meta[name="author"]').getAttribute("content")
+
 let articles = {}
+
+let articleQueue = []
 
 function $$(href) {
   return $(articles[href])
@@ -16,6 +23,11 @@ function $$(href) {
 function isValidLink(href) {
   return href.startsWith("?/") && (href in articles)
 }
+
+function isBrokenLink(href) {
+  return href.startsWith("?/") && (!(href in articles))
+}
+
 
 // ---------- drawing and scrolling ----------
 
@@ -269,6 +281,24 @@ window.onpopstate = function(event) {
 }
 
 
+function visibleLink(href) {
+  if (href == octopus_root)
+    href = ""
+
+  let url = window.location.href
+  let i = url.indexOf("?")
+  if (i > 0)
+     url = url.substring(0,i)
+
+  return url+href
+}
+
+function canonicalLink(href) {
+  if (href == octopus_root)
+    href = ""
+  return octopus_canonical+href
+}
+
 
 function navigateTo(href,scroll=true) {
   console.log("navigateTo "+href)
@@ -278,23 +308,48 @@ function navigateTo(href,scroll=true) {
 
   const elem = $$(href)
   elem.removeClass("hidden")
+  if (!elem[0].parentElement) // not in DOM? add! (initial page)
+    elem.appendTo($("#p"+elem.attr("rank")))
 
-  //window.location.search = href
-  history.pushState({}, ""+elem.attr("title"), href)
+  const url = visibleLink(href)
+
+  if (window.location.href != url) {
+    console.log(window.location.href, "->", url)
+    history.pushState({}, ""+elem.attr("title"), url)
+  }
 
   document.title = ""+elem.attr("title")
+  document.querySelector('meta[name="description"]')
+    .setAttribute("content", elem.attr("description"))
+  document.querySelector('meta[name="keywords"]')
+    .setAttribute("content", elem.attr("keywords"))
+  document.querySelector('meta[name="author"]')
+    .setAttribute("content", elem.attr("author"))
 
-  ga('set', 'page', href); // should use full url?
+
+  let link = document.querySelector("link[rel='canonical']")
+  link.setAttribute("href", canonicalLink(href))
+
+  // Note: title & meta info for asides has been set based
+  // on parent during visitLink. We could also look it up
+  // here, but then we'd need to search for the first
+  // non-aside parent.
+
+  ga('set', 'page', url); // should use full url?
   ga('send', 'pageview');
 
-  if (scroll && elem[0])
-    elem[0].scrollIntoView()
+  if (scroll && elem[0]) {
+    setTimeout(() => elem[0].scrollIntoView(), 0)
+  }
 }
 
 
 // ---------- interaction ----------
 
 function clickLink(ev) {
+  ev.stopPropagation()
+  ev.preventDefault()
+  ensureAllDom()
   const elem = ev.target
   const hhref = elem.attributes.href.value
   console.log("click",hhref, $$(hhref).hasClass("hidden"))
@@ -314,8 +369,6 @@ function clickLink(ev) {
     navigateTo(hhref)
   }
   layoutHandler()
-  ev.stopPropagation()
-  ev.preventDefault()
 }
 
 
@@ -395,7 +448,13 @@ function hideAllSiblings(href) {
 function buildNav(eid, slug) {
     let aux = $("<span class='tooltiptext'></span>")
 
-    $("<span> << </span>").on("click", function(ev) {
+    // TODO: it would be good to make these proper
+    // links and point their hrefs to parent/child
+
+    $("<a class='backlink' href=''> << </a>").on("click", function(ev) {
+      ev.stopPropagation()
+      ev.preventDefault()
+      ensureAllDom()
       const pid = $$("?"+eid).attr("parent")
       if (!pid) return
       const pelem = $$(pid)
@@ -410,18 +469,20 @@ function buildNav(eid, slug) {
         navigateTo("?"+eid, false)
       }
       layoutHandler()
-      ev.stopPropagation()
-      ev.preventDefault()
     }).appendTo(aux)
 
-    $("<span> x </span>").on("click", function(ev) {
+    $("<a class='backlink' href=''> x </a>").on("click", function(ev) {
+      ev.stopPropagation()
+      ev.preventDefault()
+      ensureAllDom()
       $$("?"+eid).addClass("hidden")
       layoutHandler()
-      ev.stopPropagation()
-      ev.preventDefault()
     }).appendTo(aux)
 
-    $("<span> >> </span>").on("click", function(ev) {
+    $("<a class='backlink' href=''> >> </a>").on("click", function(ev) {
+      ev.stopPropagation()
+      ev.preventDefault()
+      ensureAllDom()
       if (anyChildVisible("?"+eid)) {
         hideAllChildren("?"+eid, {})
         // navigate to self
@@ -432,8 +493,6 @@ function buildNav(eid, slug) {
         if (fst) navigateTo(fst)
       }
       layoutHandler()
-      ev.stopPropagation()
-      ev.preventDefault()
     }).appendTo(aux)
 
     //slug = slug || eid
@@ -450,9 +509,10 @@ function buildTitleNav(eid, slug, title) {
     titleLink.text(title)
     titleLink.append(aux)
     titleLink.on("click", function(ev) {
-      navigateTo("?"+eid)
       ev.stopPropagation()
       ev.preventDefault()
+      ensureAllDom()
+      navigateTo("?"+eid)
     })
 
     let h1 = $("<h1></h1>").append(titleLink)
@@ -520,6 +580,9 @@ function buildArticles(edges) {
     const article = $("<article class=\"hidden\"></article>")
     article.attr("id", eid)
     article.attr("title", e.node.frontmatter.title)
+    article.attr("description", e.node.frontmatter.description || defaultDescription)
+    article.attr("keywords", e.node.frontmatter.keywords || defaultKeywords)
+    article.attr("author", e.node.frontmatter.author || defaultAuthor)
     article.append(title)
     article.append(body)
     article.append(backlinks)
@@ -570,6 +633,7 @@ function extractAsides() {
     const backlinks = $("<div class=\"backlinks hidden\">Backlinks:</div>")
 
     article.attr("id", eid)
+    article.attr("generatedTitle", summary)
     article.attr("title", summary)
 
     let titleElem = contents[0]
@@ -600,15 +664,15 @@ function extractAsides() {
 function visitLink(href,n, parent) {
   // console.log("visitLink", href, n)
 
-  if (!isValidLink(href))
-    return true
+  if (!isValidLink(href)) {
+    if (isBrokenLink(href)) {
+      console.warn("not found: ", href)
+      return "brokenLink"
+    }
+    return "externalLink"
+  }
 
   const elem = $$(href)
-
-  if (!elem.length) {
-    console.warn("not found: ", href)
-    return false
-  }
 
   // If we hit an element multiple times that's ok,
   // well just put it in a different position (with children).
@@ -621,15 +685,26 @@ function visitLink(href,n, parent) {
   if (!seenBefore || seenBefore > n) {
     elem.attr("parent", parent)
     elem.attr("rank", n)
-    elem.appendTo($("#p"+n))
+
+    // elem.appendTo($("#p"+n)) // we're delaying this now!
+    articleQueue.push(elem)
+
+    // fix up titles and other meta info for asides
+    const generatedTitle = elem.attr("generatedTitle")
+    if (generatedTitle) {
+      elem.attr("title", $$(parent).attr("title") + " / " + generatedTitle)
+      elem.attr("description", $$(parent).attr("description"))
+      elem.attr("author", $$(parent).attr("author"))
+      elem.attr("keywords", $$(parent).attr("keywords"))
+    }
 
     $("a",elem).map((i,e) => {
       if ($(e).hasClass("backlink"))
         return
       const hhref = e.attributes.href.value
       const res = visitLink(hhref,n+1, href)
-      if (!res)
-        $(e).addClass("brokenLink")
+      if (res)
+        $(e).addClass(res)
       if (!seenBefore) {
         $(e).on("click", clickLink)
       }
@@ -651,7 +726,22 @@ function visitLink(href,n, parent) {
       $(".backlinks", elem).removeClass("hidden").append($("<div></div>").append(backlink))
     }
   }
-  return true
+}
+
+
+function clearAllDom() {
+  $("#p1")[0].innerText = ""
+  $("#p2")[0].innerText = ""
+  $("#p3")[0].innerText = ""
+  $("#p4")[0].innerText = ""
+  $("#p5")[0].innerText = ""
+  $("#p6")[0].innerText = ""
+}
+
+function ensureAllDom() {
+  for (let elem of articleQueue)
+    elem.appendTo($("#p"+elem.attr("rank")))
+  articleQueue = []
 }
 
 
@@ -663,6 +753,8 @@ function loadData(result) {
 
     buildArticles(edges)
     extractAsides()
+    clearAllDom()
+
     visitLink(root, 1)
 
     const target = window.location.search || root

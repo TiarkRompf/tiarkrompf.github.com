@@ -315,7 +315,7 @@ h1 a {
 }
 }
 
-.tooltip .tooltiptext span {
+.tooltip .tooltiptext a {
   margin-left: 5px;
   margin-right: 5px;
 }
