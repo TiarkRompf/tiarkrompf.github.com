@@ -42,6 +42,7 @@
 
 <!-- sub: teaching, linked files, ... -->
 
+<!--
    <url>
       <loc>https://www.cs.purdue.edu/~rompf/cv.pdf</loc>
       <lastmod>2020-07-08</lastmod>
@@ -60,6 +61,7 @@
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
+-->
    <url>
       <loc>https://tiarkrompf.github.io/cs352/</loc>
       <lastmod>2020-07-08</lastmod>
