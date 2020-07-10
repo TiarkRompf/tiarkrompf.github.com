@@ -554,6 +554,12 @@ function buildArticles(edges) {
 
     const title = buildTitleNav(eid, e.node.fields.slug, e.node.frontmatter.title)
 
+    let description = null
+    if (e.node.frontmatter.description) {
+      description = $("<div class='description'></div>")
+      description.html(e.node.frontmatter.description)
+    }
+
     const body = $("<div></div>")
     body.html(e.node.html)
 
@@ -584,6 +590,7 @@ function buildArticles(edges) {
     article.attr("keywords", e.node.frontmatter.keywords || defaultKeywords)
     article.attr("author", e.node.frontmatter.author || defaultAuthor)
     article.append(title)
+    if (description) article.append(description)
     article.append(body)
     article.append(backlinks)
 
@@ -705,7 +712,7 @@ function visitLink(href,n, parent) {
       const res = visitLink(hhref,n+1, href)
       if (res)
         $(e).addClass(res)
-      if (!seenBefore) {
+      if (!seenBefore && res != "externalLink") {
         $(e).on("click", clickLink)
       }
     })

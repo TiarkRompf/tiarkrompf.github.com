@@ -366,6 +366,11 @@ h3:hover .tooltiptext {
   margin-top: 1em;
 }
 
+.description {
+  font-style: italic;
+}
+
+
 /* editor */
 /* this will capture the o div, i.e., make output
 as a whole scroll in x direction */
