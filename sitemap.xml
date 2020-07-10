@@ -105,43 +105,55 @@
 
    <url>
       <loc>https://tiarkrompf.github.io/notes/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <lastmod>2020-07-10</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://tiarkrompf.github.io/notes/?/deconstructing-react/</loc>
+      <lastmod>2020-07-10</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://tiarkrompf.github.io/notes/?/touch-camera-device-apis/</loc>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://tiarkrompf.github.io/notes/?/drawing-graphs/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://tiarkrompf.github.io/notes/?/virtual-piano/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://tiarkrompf.github.io/notes/?/differentiable-programming-in-js/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://tiarkrompf.github.io/notes/?/interactive-coding-with-multiple-snippets/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <loc>https://tiarkrompf.github.io/notes/?/interactive-literate-programming/</loc>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://tiarkrompf.github.io/notes/?/interactive-coding/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
       <loc>https://tiarkrompf.github.io/notes/?/octopus-notes/</loc>
-      <lastmod>2020-07-08</lastmod>
+      <lastmod>2020-07-10</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
