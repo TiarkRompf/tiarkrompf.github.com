@@ -110,8 +110,14 @@
       <priority>1.0</priority>
    </url>
    <url>
+      <loc>https://tiarkrompf.github.io/notes/?/differentiable-graphics/</loc>
+      <lastmod>2020-07-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
       <loc>https://tiarkrompf.github.io/notes/?/deconstructing-react/</loc>
-      <lastmod>2020-07-10</lastmod>
+      <lastmod>2020-07-11</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
@@ -135,7 +141,7 @@
    </url>
    <url>
       <loc>https://tiarkrompf.github.io/notes/?/differentiable-programming-in-js/</loc>
-      <lastmod>2020-07-10</lastmod>
+      <lastmod>2020-07-13</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
