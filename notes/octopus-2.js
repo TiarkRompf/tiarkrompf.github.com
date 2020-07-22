@@ -273,7 +273,8 @@ window.onpopstate = function(event) {
   const elem = $$(href)
   elem.removeClass("hidden")
 
-  elem[0]?.scrollIntoView()
+  if (elem[0])
+    elem[0].scrollIntoView()
 
   layoutHandler()
 
