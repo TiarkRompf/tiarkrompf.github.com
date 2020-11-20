@@ -607,7 +607,10 @@ function extractAsides() {
   var asideCount = 0
 
   // extract asides as articles and replace with a link
-  $("aside").map((i,e0) => {
+  $("article").map((i,a0) => {
+    const parentHref = a0.id
+    asideCount = 0
+  $("aside",a0).map((i,e0) => {
     const e = $(e0)
     const contents = e.contents()
     const article = $("<article class=\"hidden\"></article>")
@@ -634,7 +637,7 @@ function extractAsides() {
       eid = eid + "/"
 
     if (!eid)
-      eid = "/aside" + (++asideCount)
+      eid = parentHref+"aside" + (++asideCount)
 
     // const aux = buildNav(eid)
 
@@ -667,6 +670,7 @@ function extractAsides() {
 
     article.appendTo($("#p6"))
   })
+})
 }
 
 function visitLink(href,n, parent) {

@@ -374,7 +374,7 @@ h3:hover .tooltiptext {
 /* editor */
 /* this will capture the o div, i.e., make output
 as a whole scroll in x direction */
-.editor_e div {
+.editor_o {
   width: 100%;
   overflow: auto;
 }
