@@ -189,7 +189,8 @@ function coolEditorComp(codeElem) {
   window.snippetList.push({ e, name, getFullInput, getOwnInput, prevRef })
   e.appendChild(a)
   e.appendChild(o)
-  runInput()
+  // runInput()
+  setTimeout(() => runInput(), 0)
   return { e, name, getFullInput, getOwnInput, prevRef }
 }
 // this one is to be called at the top of each article
