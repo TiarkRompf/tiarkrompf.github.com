@@ -92,12 +92,14 @@ function coolEditorComp(codeElem) {
       let chain = [getOwnInput()]
       let pr = prevRef
       let pe = startInput[pr]
-      let i = 20
+      let i = 50
       while (pr && pe && i--) {
         chain.push(pe.getOwnInput())
         pr = pe.prevRef
         pe = startInput[pr]
       }
+      if (!i)
+        console.log("Warning: exhausted editor linkage fuel at "+selfRef)
       return chain.reverse().join("\n")
     } else {
       // console.log(startInput)
