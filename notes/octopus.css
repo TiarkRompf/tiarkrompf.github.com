@@ -151,6 +151,7 @@ li > p { margin-bottom: 7px; margin-top: 7px;}
 li > :first-child { margin-bottom: 0; margin-top: 0; }
 
 ul { padding-inline-start: 20px; }
+ol { padding-inline-start: 20px; }
 
 blockquote {
   margin-inline-start: 20px;
