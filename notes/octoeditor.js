@@ -185,7 +185,7 @@ function coolEditorComp(codeElem) {
       e.appendChild(as)
   } else
       e.appendChild(p)
-  console.log(selfRef + " -> " + prevRef)
+  //console.log(selfRef + " -> " + prevRef)
   let name = selfRef
   window.snippets[name] = { e, name, getFullInput, getOwnInput, prevRef }
   window.snippetList.push({ e, name, getFullInput, getOwnInput, prevRef })

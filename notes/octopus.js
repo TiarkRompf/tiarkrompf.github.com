@@ -286,6 +286,8 @@ function visibleLink(href) {
   if (href == octopus_root)
     href = ""
 
+  return window.location.pathname+href
+
   let url = window.location.href
   let i = url.indexOf("?")
   if (i > 0)
@@ -336,8 +338,8 @@ function navigateTo(href,scroll=true) {
   // here, but then we'd need to search for the first
   // non-aside parent.
 
-  ga('set', 'page', url); // should use full url?
-  ga('send', 'pageview');
+  ga('set', 'page', url)
+  ga('send', 'pageview')
 
   if (scroll && elem[0]) {
     setTimeout(() => elem[0].scrollIntoView(), 0)
@@ -558,11 +560,11 @@ function buildArticles(edges) {
     let description = null
     if (e.node.frontmatter.description) {
       description = $("<div class='description'></div>")
-      description.html(e.node.frontmatter.description)
+      description[0].innerText = e.node.frontmatter.description
     }
 
     const body = $("<div></div>")
-    body.html(e.node.html)
+    body[0].innerHTML = e.node.html
 
     // convert links
     $("a", body).map((i,e) => {
@@ -582,7 +584,6 @@ function buildArticles(edges) {
     })
 
     const backlinks = $("<div class=\"backlinks hidden\">Backlinks:</div>")
-
 
     const article = $("<article class=\"hidden\"></article>")
     article.attr("id", eid)
@@ -605,6 +606,8 @@ function buildArticles(edges) {
 
 function extractAsides() {
   var asideCount = 0
+
+  // TODO perf: iterate over `edges` or `articles`
 
   // extract asides as articles and replace with a link
   $("article").map((i,a0) => {
@@ -779,10 +782,10 @@ function loadData(result) {
 
     console.log("end2")
   } catch (ex) {
-    console.error("error during loading")
-    console.error(ex)
+    console.error("error during loading",ex)
+    //console.error(ex)
     $(".loading").removeClass("blink").text(ex)
-    throw ex
+    //throw ex
   }
 }
 
