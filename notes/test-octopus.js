@@ -522,13 +522,12 @@ function buildTitleNav(eid, slug, title) {
 }
 
 function runScriptElement(e, src) {
-  // XXX TEMP: disabled!!!
-  return
   return eval(src || e.innerText)
 }
 
 
 function runScripts(eid,elem) {
+  return // XXX TEMP
   $(".runScript", elem).map((i,e) => {
     try {
       const defaultFilter = runScriptElement
