@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
+<title>Tiark's Notebook</title>
+<meta name="description" content="Tiark Rompf is an Associate Professor at Purdue University. Notes and blog posts on programming, research, CS, software systems.">
+<meta name="keywords" content="Programming, Research, CS, Software Systems, Code">
+<meta name="author" content="Tiark Rompf">
+<link rel="canonical" href="https://tiarkrompf.github.io/notes/" />
+<link rel="stylesheet" href="octopus.css">
+<!-- init octopus & load data -->
+<script>
+octopus_url = "page-data.json"
+if (window.location.protocol == "file:")
+  octopus_url = "/Users/me/Desktop/tryout/web/gatsby-test1/public/page-data/public/page-data.json"
+octopus_prefix = "/Public/Generic"
+octopus_root = "?/public/"
+octopus_canonical = "https://tiarkrompf.github.io/notes/"
+octopus_data = new Promise((succ,fail) => {
+  let req = new XMLHttpRequest();
+  req.responseType = "json" // TODO old browsers: use JSON.parse(req.responseText)
+  req.addEventListener("load", (e) => succ(req.response))
+  req.addEventListener("error", (e) => fail(req.statusText))
+  req.addEventListener("abort", (e) => fail(req.statusText))
+  req.open("GET", octopus_url);
+  req.send();
+})
+</script>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-39122235-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+<!-- Inconsolata 300,400 -->
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap" rel="stylesheet">
+<!-- Caveat 400, 700 -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="loading blink">
+  Loading ...
+</div>
+<div class="outerPanel">
+  <div id="p1" class="panel"></div>
+  <div id="mid1" class="middle">
+    <canvas id="cvs1" width=100 height=2500></canvas>
+  </div>
+  <div id="p2" class="panel"></div>
+  <div id="mid2" class="middle">
+    <canvas id="cvs2" width=100 height=2500></canvas>
+  </div>
+  <div id="p3" class="panel"></div>
+  <div id="mid3" class="middle">
+    <canvas id="cvs3" width=100 height=2500></canvas>
+  </div>
+  <div id="p4" class="panel"></div>
+  <div id="mid4" class="middle">
+    <canvas id="cvs4" width=100 height=2500></canvas>
+  </div>
+  <div id="p5" class="panel"></div>
+  <div id="mid5" class="middle">
+    <canvas id="cvs5" width=100 height=2500></canvas>
+  </div>
+  <div id="p6" class="panel"></div>
+</div>
+<script type="text/javascript" src="test-octopus.js"></script>
+<script type="text/javascript" src="test-octoeditor.js"></script>
+</body>
+</html>
