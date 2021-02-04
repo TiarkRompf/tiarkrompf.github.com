@@ -1,14 +1,14 @@
 function coolEditorComp(codeElem) {
   // snippet linking
-  const startInput = {...window.snippets}
+  const prevSnippets = {...window.snippets}
   const snippetList = window.snippetList
   const selfIndex = snippetList.length
   let selfRef = codeElem.getAttribute("name")
   if (!selfRef)
     selfRef = "snippet"+selfIndex
   let prevRef = codeElem.getAttribute("prev")
-  if (!prevRef && startInput[selfRef])
-    prevRef = startInput[selfRef].prevRef
+  if (!prevRef && prevSnippets[selfRef])
+    prevRef = prevSnippets[selfRef].prevRef
   if (!prevRef)
     prevRef = window.preamble
   let diff = codeElem.getAttribute("diff")
@@ -21,7 +21,7 @@ function coolEditorComp(codeElem) {
   o.className = "editor_o"
   p.className = "editor_p"
   if (diff) {
-    let oldInput = startInput[selfRef].getOwnInput()
+    let oldInput = prevSnippets[selfRef].getOwnInput()
     oldInput = document.createTextNode("/*"+oldInput+"*/\n")
     let wrapper = document.createElement("i")
     wrapper.appendChild(oldInput)
@@ -50,9 +50,12 @@ function coolEditorComp(codeElem) {
   a.innerText = "idle"
   let status = "idle"
   let result = undefined
+  let visible = false
+  let dirty = true
   function setStatus(st, res) {
       status = st
       result = res
+      dirty = false
       if (res)
           a.innerText = st + ": " + res
       else
@@ -91,29 +94,40 @@ function coolEditorComp(codeElem) {
     if (prevRef) {
       let chain = [getOwnInput()]
       let pr = prevRef
-      let pe = startInput[pr]
+      let pe = prevSnippets[pr]
       let i = 50
       while (pr && pe && i--) {
         chain.push(pe.getOwnInput())
         pr = pe.prevRef
-        pe = startInput[pr]
+        pe = prevSnippets[pr]
       }
       if (!i)
         console.log("Warning: exhausted editor linkage fuel at "+selfRef)
       return chain.reverse().join("\n")
     } else {
-      // console.log(startInput)
-      let preamble = startInput["preamble"].getFullInput()
+      // console.log(prevSnippets)
+      let preamble = prevSnippets["preamble"].getFullInput()
       let full = preamble + "\n" + getOwnInput()
-      for (let k in startInput) {
-        full = full.replace(new RegExp("{{"+k+"}}","g"), startInput[k].getFullInput())
+      for (let k in prevSnippets) {
+        full = full.replace(new RegExp("{{"+k+"}}","g"), prevSnippets[k].getFullInput())
       }
     //  console.log(full)
       return full
     }
   }
+  function setDirty() {
+    dirty = true
+    maybeRunInput()
+  }
   function runInput() {
     run(getFullInput())
+  }
+  function scheduleRunInput() {
+    setTimeout(() => runInput(), 0)
+  }
+  function maybeRunInput() {
+    if (visible && dirty)
+      scheduleRunInput()
   }
   async function buttonClick(str) {
       const btn = document.createElement("button")
@@ -175,6 +189,17 @@ function coolEditorComp(codeElem) {
       // could be a change/input listener
       // for now, delay to run after char insertion
       setTimeout(() => runInput(), 0)
+
+      // mark all clients dirty. TODO: ok with prevSnippets?
+      let dirty = {}
+      dirty[selfRef] = true
+      for (let i = selfIndex + 1; i < snippetList.length; i++) {
+        let sn = snippetList[i]
+        if (dirty[sn.prevRef]) {
+          sn.setDirty()
+          dirty[sn.name] = true
+        }
+      }
   })
   if (codeElem.getAttribute("popout")) {
       const as = document.createElement("aside")
@@ -187,13 +212,25 @@ function coolEditorComp(codeElem) {
       e.appendChild(p)
   //console.log(selfRef + " -> " + prevRef)
   let name = selfRef
-  window.snippets[name] = { e, name, getFullInput, getOwnInput, prevRef }
-  window.snippetList.push({ e, name, getFullInput, getOwnInput, prevRef })
+  let obj = { e, name, getFullInput, getOwnInput, setDirty, prevRef }
+  window.snippets[name] = obj
+  window.snippetList.push(obj)
   e.appendChild(a)
   e.appendChild(o)
+  // Version 1: run input directly
   // runInput()
-  setTimeout(() => runInput(), 0)
-  return { e, name, getFullInput, getOwnInput, prevRef }
+  // Version 2: run after render
+  // setTimeout(() => runInput(), 0)
+  // Version 3: run based on visibility
+  let obs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      visible = entry.isIntersecting
+      //console.log("visibility change: "+name+" "+visible)
+      maybeRunInput()
+    })
+  }, {threshold:0})
+  obs.observe(e)
+  return obj
 }
 // this one is to be called at the top of each article
 window.initArticleEditorSupport = function initArticleEditorSupport(e) {
@@ -230,7 +267,7 @@ window.initArticleEditorSupport = function initArticleEditorSupport(e) {
   window.snippets = { preamble: {
     getFullInput: () => "",
     getOwnInput: () => "",
-    startInput: {},
+    prevSnippets: {},
   }}
   window.snippetList = []
   window.preamble = "none"
