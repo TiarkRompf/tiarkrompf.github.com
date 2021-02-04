@@ -522,6 +522,7 @@ function buildTitleNav(eid, slug, title) {
 }
 
 function runScriptElement(e, src) {
+  return // XXX disabled
   return eval(src || e.innerText)
 }
 
