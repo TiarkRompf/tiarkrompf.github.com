@@ -546,7 +546,7 @@ function runScripts(eid,elem) {
   })
 }
 
-
+// create articles from JSON data
 function buildArticles(edges) {
   for (e of edges) {
     // console.log(e.node)
@@ -600,20 +600,18 @@ function buildArticles(edges) {
 
     runScripts(eid, article)
 
-    article.appendTo($("#p6"))
+    //article.appendTo($("#p6"))
+
+    // now extract asides
+    extractArticleAsides(eid,article)
   }
 }
 
-function extractAsides() {
-  var asideCount = 0
-
-  // TODO perf: iterate over `edges` or `articles`
-
-  // extract asides as articles and replace with a link
-  $("article").map((i,a0) => {
-    const parentHref = a0.id
-    asideCount = 0
-  $("aside",a0).map((i,e0) => {
+// extract asides as articles and replace with a link
+function extractArticleAsides(parentHref, parentArticle) {
+  //let parentHref = parentArticle.id
+  let asideCount = 0
+  $("aside",parentArticle).map((i,e0) => {
     const e = $(e0)
     const contents = e.contents()
     const article = $("<article class=\"hidden\"></article>")
@@ -671,10 +669,10 @@ function extractAsides() {
 
     //runScripts(eid, article) don't run twice!
 
-    article.appendTo($("#p6"))
+    //article.appendTo($("#p6"))
   })
-})
 }
+
 
 function visitLink(href,n, parent) {
   // console.log("visitLink", href, n)
@@ -767,7 +765,6 @@ function loadData(result) {
     const edges = query.result.data.allMarkdownRemark.edges
 
     buildArticles(edges)
-    extractAsides()
     clearAllDom()
 
     visitLink(root, 1)
