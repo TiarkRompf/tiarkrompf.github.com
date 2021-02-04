@@ -527,7 +527,6 @@ function runScriptElement(e, src) {
 
 
 function runScripts(eid,elem) {
-  return // XXX TEMP
   $(".runScript", elem).map((i,e) => {
     try {
       const defaultFilter = runScriptElement
@@ -667,7 +666,7 @@ function extractAsides() {
 
     articles["?"+eid] = article
 
-    runScripts(eid, article)
+    //runScripts(eid, article) don't run twice!
 
     article.appendTo($("#p6"))
   })
@@ -795,6 +794,7 @@ function handleError(statusText) {
 
 console.log(dataUrl)
 
+// faster time to interactive if we load data before loading jQuery
 //$.ajax({url: dataUrl, success: loadData, error: handleError}); // TODO: handle error
 
 octopus_data.then(loadData, handleError)

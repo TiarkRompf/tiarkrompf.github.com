@@ -9,6 +9,24 @@
 <meta name="author" content="Tiark Rompf">
 <link rel="canonical" href="https://tiarkrompf.github.io/notes/" />
 <link rel="stylesheet" href="octopus.css">
+<!-- init octopus & load data -->
+<script>
+octopus_url = "page-data.json"
+if (window.location.protocol == "file:")
+  octopus_url = "/Users/me/Desktop/tryout/web/gatsby-test1/public/page-data/public/page-data.json"
+octopus_prefix = "/Public/Generic"
+octopus_root = "?/public/"
+octopus_canonical = "https://tiarkrompf.github.io/notes/"
+octopus_data = new Promise((succ,fail) => {
+  let req = new XMLHttpRequest();
+  req.responseType = "json" // TODO old browsers: use JSON.parse(req.responseText)
+  req.addEventListener("load", (e) => succ(req.response))
+  req.addEventListener("error", (e) => fail(req.statusText))
+  req.addEventListener("abort", (e) => fail(req.statusText))
+  req.open("GET", octopus_url);
+  req.send();
+})
+</script>
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 <!-- Google Analytics -->
@@ -55,15 +73,6 @@ ga('send', 'pageview');
   </div>
   <div id="p6" class="panel"></div>
 </div>
-<script>
-octopus_url = "page-data.json"
-if (window.location.protocol == "file:")
-  octopus_url = "/Users/me/Desktop/tryout/web/gatsby-test1/public/page-data/public/page-data.json"
-octopus_prefix = "/Public/Generic"
-octopus_root = "?/public/"
-octopus_canonical = "https://tiarkrompf.github.io/notes/"
-
-</script>
 <script type="text/javascript" src="octopus.js"></script>
 <script type="text/javascript" src="octoeditor.js"></script>
 </body>

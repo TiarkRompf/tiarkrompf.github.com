@@ -666,7 +666,7 @@ function extractAsides() {
 
     articles["?"+eid] = article
 
-    runScripts(eid, article)
+    //runScripts(eid, article) don't run twice!
 
     article.appendTo($("#p6"))
   })
@@ -786,14 +786,17 @@ function loadData(result) {
   }
 }
 
-function handleError(jqXHR, textStatus, errorThrown) {
-    let str = "Ajax error "+errorThrown // typically ""?
+function handleError(statusText) {
+    let str = "Ajax error "+statusText // typically ""?
     console.error(str)
     $(".loading").removeClass("blink").text(str)
 }
 
 console.log(dataUrl)
 
-$.ajax({url: dataUrl, success: loadData, error: handleError}); // TODO: handle error
+// faster time to interactive if we load data before loading jQuery
+//$.ajax({url: dataUrl, success: loadData, error: handleError}); // TODO: handle error
+
+octopus_data.then(loadData, handleError)
 
 console.log("end")
