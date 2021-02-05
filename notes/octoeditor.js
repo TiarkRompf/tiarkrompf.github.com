@@ -71,27 +71,33 @@ function coolEditorComp(codeElem) {
           a.innerText = st
   }
   function run(src) {
-      const o1 = o
+      let savedOut = []
+      let savedAsides = {}
       function onDone(res) {
           setStatus("done", res)
       }
       function onError(err) {
           setStatus("error", err)
-          // if no output, put back previous result
+          // if no output, restore previous result
           if (!o.firstChild) {
-              o.remove()
-              o = o1
-              e.appendChild(o)
+            o.innerText = ""
+            for (let c of savedOut)
+              o.appendChild(c)
+            for (let a of asideNames) {
+              asides[a].innerText = ""
+              for (let c of savedAsides[a])
+                asides[a].appendChild(c)
+            }
           }
       }
       try {
-          // TODO: could do similar gymnastics as with o
+          // NOTE: we save only Elem children, not text nodes (good enough?)
+          savedOut = [...o.children]
+          o.innerText = ""
           for (let a of asideNames) {
+            savedAsides[a] = [...asides[a].children]
             asides[a].innerText = ""
           }
-          o.remove()
-          o = document.createElement("div")
-          e.appendChild(o)
           setStatus("running")
           const fullSrc = `async () => { ${src} }`
           const fun = eval(fullSrc)
