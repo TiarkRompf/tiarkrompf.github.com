@@ -20,6 +20,15 @@ function coolEditorComp(codeElem) {
   e.className = "editor_e"
   o.className = "editor_o"
   p.className = "editor_p"
+  let asideNames = []
+  let asides = {}
+  if (codeElem.getAttribute("asides")) {
+    let str = codeElem.getAttribute("asides")
+    asideNames = str.split(",").map(s=>s.trim())
+    for (let a of asideNames) {
+      asides[a] = document.createElement("div")
+    }
+  }
   if (diff) {
     let oldInput = prevSnippets[selfRef].getOwnInput()
     oldInput = document.createTextNode("/*"+oldInput+"*/\n")
@@ -76,6 +85,10 @@ function coolEditorComp(codeElem) {
           }
       }
       try {
+          // TODO: could do similar gymnastics as with o
+          for (let a of asideNames) {
+            asides[a].innerText = ""
+          }
           o.remove()
           o = document.createElement("div")
           e.appendChild(o)
@@ -210,6 +223,14 @@ function coolEditorComp(codeElem) {
       e.appendChild(as)
   } else
       e.appendChild(p)
+  for (let a of asideNames) {
+      const as = document.createElement("aside")
+      const la = document.createElement("div")
+      la.innerText = a +":"
+      as.appendChild(la)
+      as.appendChild(asides[a])
+      e.appendChild(as)
+  }
   //console.log(selfRef + " -> " + prevRef)
   let name = selfRef
   let obj = { e, name, getFullInput, getOwnInput, setDirty, prevRef }
