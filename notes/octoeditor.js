@@ -136,7 +136,9 @@ function coolEditorComp(codeElem) {
     run(getFullInput())
   }
   function scheduleRunInput() {
-    setTimeout(() => runInput(), 0)
+    // will likely generate output, so redraw tentacles
+    // (could skip for addPreamble, etc)
+    setTimeout(() => { runInput(); redraw() }, 0)
   }
   function maybeRunInput() {
     if (visible && dirty)
@@ -201,7 +203,7 @@ function coolEditorComp(codeElem) {
   p.addEventListener("keydown", function(ev) {
       // could be a change/input listener
       // for now, delay to run after char insertion
-      setTimeout(() => runInput(), 0)
+      setDirty() // (will schedule if visible; most likely true)
 
       // mark all clients dirty. TODO: ok with prevSnippets?
       let dirty = {}
