@@ -649,8 +649,10 @@ function extractArticleAsides(parentHref, parentArticle) {
     article.attr("title", summary)
 
     let titleElem = contents[0]
-    if (!titleElem || $(titleElem).text().length < 3)
+    // If first element is empty, skip to next
+    if (!titleElem || $(titleElem).text().trim().length == 0) {
       titleElem = contents[1]
+    }
 
     if (titleElem) {
       // TODO: for consistency with top level articles,
