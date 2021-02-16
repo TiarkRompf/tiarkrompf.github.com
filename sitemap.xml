@@ -112,6 +112,12 @@
 
 
    <url>
+      <loc>https://tiarkrompf.github.io/notes/?/smooth-tree-animation/</loc>
+      <lastmod>2021-02-15</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
       <loc>https://tiarkrompf.github.io/notes/?/auto-live-coding/</loc>
       <lastmod>2021-01-31</lastmod>
       <changefreq>weekly</changefreq>
