@@ -1,16 +1,27 @@
-/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i'); */
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i); 
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Inter:300,400,500,700);
 
 body {
+  -webkit-font-smoothing: antialiased;
   padding:50px;
   /* font:14px/1.5 "Noto Sans"; */
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#777;
-  font-weight:300;
+  font:14px "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*  color:#444;*/
+/*  color: rgb(71 85 105);*/
+  color:#727272;
+  line-height: 1.5;
+  font-weight:400;
+/*  font-weight:300;*/
+/*  background-color: rgb(248, 250, 252);*/
+/*background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);*/
+/*  background-attachment: fixed;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
+/*color: rgb(15 23 42);*/
   margin:0 0 20px;
 }
 
@@ -20,11 +31,11 @@ p, ul, ol, table, pre, dl {
 
 h1, h2, h3 {
   line-height:1.1;
+/*  font-family: Inter, "Helvetica Neue";*/
 }
 
 h1 {
   font-size:28px;
-  font-family: Helvetica;
 }
 
 h2 {
@@ -36,19 +47,26 @@ h3, h4, h5, h6 {
 }
 
 a {
-  color:#39c;
-  font-weight:400;
+  color:#267CB9;
+/*  color:#39c;*/
+/*  font-weight:400;*/
+/*  color:#001b79;*/
+/*color:#0040d6; */
+/*color: rgb(14 165 233);*/
+/*  font-weight:500;*/
   text-decoration:none;
 }
 
-a:hover {
-  color:#069;
+a:hover, a:focus {
+  color: navy;
+/*  color:#069;*/
+/*  font-weight: bold;*/
 }
 
 a small {
   font-size:11px;
   color:#777;
-  margin-top:-0.6em;
+  margin-top:-0.3em;
   display:block;
 }
 
@@ -78,9 +96,9 @@ blockquote {
 }
 
 code, pre {
-  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color:#333;
-  font-size:12px;
+/*  font-size:12px;*/
 }
 
 pre {
@@ -115,16 +133,31 @@ img {
   max-width:100%;
 }
 
+kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
 header {
   width:270px;
   float:left;
   position:fixed;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
 
-header ul {
+/*header ul {
   padding-left:20px;
 }
-
+*/
 
 ul.fancy {
   list-style:none;
@@ -230,6 +263,7 @@ footer {
   float:left;
   position:fixed;
   bottom:50px;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
 
 @media print, screen and (max-width: 960px) {

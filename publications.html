@@ -25,15 +25,13 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Tiark &nbsp;Rompf</h1>
+        <p><img style="display: block; margin:auto; width:15em; border-radius: 50%;" src="pic-new.jpg"></p>
 
-        <p><img style="width:15em" src="pic.png"></p>
+        <h1 style="text-align:center; margin-bottom:.5ex">Tiark&nbsp;Rompf</h1>
+        <p style="text-align:center;">Purdue University, Department of Computer Science</p>
 
-        <!-- <h3>Find me here:</h3>
-        <p class="view"></p> -->
-
-        <ul>
-<!--          <li><a href="https://purduepl.github.io">Purdue PL Group (PurPL)</a> -->
+<!--
+        <ul style="display: block; margin:auto; width:fit-content;">
           <li><a href="https://www.cs.purdue.edu/people/faculty/rompf/">firstname@purdue.edu</a>
           <li><a href="http://scholar.google.com/citations?user=L8zhVsMAAAAJ&hl=en">google scholar</a>,
           <a href="http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rompf:Tiark.html">dblp</a>
@@ -44,14 +42,14 @@
           <img src="https://purduepl.github.io/assets/banner.png" style="width:10em" /></a>
           <li><a href="https://purpl.cs.purdue.edu">Purdue PL Center (PurPL)</a>
 
-        </ul>
+        </ul>-->
 
       </header>
       <section>
 
 <p><a href="index.html">Home</a>
  | <a href="research.html">Research</a>
- | <a href="notes/">Notes</a>
+ | <a href="notes/">Blog</a>
  | <a href="publications.html">Publications</a>
  | <a href="talks.html">Talks</a>
  | <a href="group.html">Group</a>
@@ -61,10 +59,9 @@
 
 
 
-
 <h2>Publications</h2>
 
-<p>See also <a href="http://scholar.google.com/citations?user=L8zhVsMAAAAJ&hl=en">Google Scholar</a> and <a href="http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rompf:Tiark.html">DBLP</a>. Many papers are <a href="https://www.cs.purdue.edu/~rompf/papers">available in PDF form here</a>.
+<p>See also <a href="http://scholar.google.com/citations?user=L8zhVsMAAAAJ&hl=en">Google Scholar</a> and <a href="http://www.informatik.uni-trier.de/~ley/pers/hd/r/Rompf:Tiark.html">DBLP</a>. Many papers are <a href="https://www.cs.purdue.edu/~rompf/papers">available as PDF here</a>.
 </p>
 
 
@@ -72,64 +69,363 @@
 
 <h4>Current Preprints</h4>
 
+<!--
+
+Architecting Intermediate Layers for Efficient Composition of Data Management and Machine Learning Systems.
+Supun Abeysinghe, Fei Wang, Gregory Essertel, Tiark Rompf.
+https://arxiv.org/abs/2311.02781
+
+
+Graph IRs for Impure Higher-Order Languages (Technical Report).
+Oliver Bračevac, Guannan Wei, Songlin Jia, Supun Abeysinghe, Yuxuan Jiang, Yuyan Bao, Tiark Rompf.
+https://arxiv.org/abs/2309.08118
+
+Modeling Reachability Types with Logical Relations.
+Yuyan Bao, Guannan Wei, Oliver Bračevac, Tiark Rompf.
+https://arxiv.org/abs/2309.05885
+
+OCTAL: Graph Representation Learning for LTL Model Checking
+Authors: Prasita Mukherjee, Haoteng Yin, Susheel Suresh, Tiark Rompf
+https://arxiv.org/abs/2207.11649
+
+
+A GNN Based Approach to LTL Model Checking
+Authors: Prasita Mukherjee, Tiark Rompf
+https://arxiv.org/abs/2110.14824
+
+Resilient Cyberphysical Systems and their Application Drivers: A Technology Roadmap
+Authors: Somali Chaterji, Parinaz Naghizadeh, Muhammad Ashraful Alam, Saurabh Bagchi, Mung Chiang, David Corman, Brian Henz, Suman Jana, Na Li, Shaoshuai Mou, Meeko Oishi, Chunyi Peng, Tiark Rompf, Ashutosh Sabharwal, Shreyas Sundaram, James Weimer, Jennifer Weller
+https://arxiv.org/abs/2001.00090
+
+Graph Neural Reasoning for 2-Quantified Boolean Formula Solvers
+Authors: Zhanfu Yang, Fei Wang, Ziliang Chen, Guannan Wei, Tiark Rompf
+https://arxiv.org/abs/1904.12084
+
+
+
+-->
+
+
+
 <ul>
 
-<li> <a href="https://www.cs.purdue.edu/~rompf/papers/"> <!-- bracevac-preprint202110 -->
-Graph IRs for Impure Higher-Order Languages: Making Aggressive Optimizations Affordable with Precise Effect Dependencies.</a></br>
+
+<li> <a href="https://arxiv.org/abs/2309.05885">Modeling Reachability Types with Logical Relations</a>.
+Yuyan Bao, Guannan Wei, Oliver Bračevac, Tiark Rompf.
+
+<li> <a href="https://arxiv.org/abs/2311.02781">Architecting Intermediate Layers for Efficient Composition of Data Management and Machine Learning Systems</a>.
+Supun Abeysinghe, Fei Wang, Gregory Essertel, Tiark Rompf.
 
 <li> <a href="https://www.cs.purdue.edu/~rompf/papers/decker-preprint201907.pdf">
-Snek: Overloading Python Semantics via Virtualization</a></br>
+Snek: Overloading Python Semantics via Virtualization</a>.
+James M Decker, et al.
 </ul>
 
 
+<script>
+window.confs = {
+  "OOPSLA": "PL", "ICFP": "PL", "POPL": "PL", "PLDI": "PL", "ECOOP": "PL",
+  "PACT": "PL", "CGO": "PL", "APLAS": "PL",
+  "GPCE": "PL", "PEPM": "PL", "SCALA": "PL",
+  "FSE": "SE", "ICSE": "SE",
+  "VLDB": "DB", "SIGMOD": "DB", "DBPL": "DB",
+  "OSDI": "OS", "SysML": "OS",
+  "ICML": "ML", "ICLR": "ML", "NeurIPS": "ML",
+  "MICRO": "AR",
+  "arXiv": "TR",
+}
+window.papers = []
+window.papersByYear = {}
+window.papersByConf = {}
+window.papersByTag = {}
+window.years = []
+window.yearsByYear = {}
+window.onload = function() {
+  function hidePapers() {
+    for (let e of papers) {
+      e.style.display = "none"
+    }
+    for (let e of years) {
+      e.style.display = "none"
+    }
+  }
+  function showPaper(e) {
+    e.style.display = ""
+    if (yearsByYear[e.year])
+      yearsByYear[e.year].style.display = ""
+  }
+  window.showAll = function() {
+    for (let e of papers)
+      showPaper(e)
+    for (let e of years)
+      e.style.display = ""
+  }
+  window.clickYear = function(k) {
+    k = decodeURI(k)
+    hidePapers()
+    for (let e of papersByYear[k]) {
+      showPaper(e)
+    }
+  }
+  window.clickConf = function(k) {
+    k = decodeURI(k)
+    hidePapers()
+    for (let e of papersByConf[k]) {
+      showPaper(e)
+    }
+  }
+  window.clickGroup = function(g) {
+    k = decodeURI(g)
+    hidePapers()
+    for (let k in papersByTag[g]) {
+      for (let e of papersByTag[g][k]) {
+        showPaper(e)
+      }
+    }
+  }
+  window.clickTag = function(g,k) {
+    g = decodeURI(g)
+    k = decodeURI(k)
+    hidePapers()
+    for (let e of papersByTag[g][k]) {
+      showPaper(e)
+    }
+  }
+  window.years = [...document.getElementsByClassName("year")]
+  years.reverse()
+  for (let e of years) {
+    let y = e.innerText.split("\n")[0]
+    yearsByYear[y] = e
+    papersByYear[y] = []
+  }
+  for (let e in confs) {
+    papersByConf[e] = []
+  }
+  let lis = document.getElementsByTagName("section")[0].getElementsByTagName("li")
+  for (let e of [...lis]) {
+    let title = e.getElementsByTagName("i")[0]
+    if (title) {
+      let titleText = title.innerText.split(".")[0]
+      let chunks = e.innerText.split(".")
+      if (chunks[0] != titleText)
+        console.dir([titleText,...chunks])
+      e.title = chunks[0]
+      e.authors = chunks[1]
+      e.conf = "Other"
+      if (chunks[2].includes("'")) {
+        e.year = "20"+chunks[2].split("'")[1]
+      } else {
+        e.year = "Other"
+        let idx = chunks[2].search(/20[0-9][0-9]/g)
+        if (idx >= 0)
+          e.year = chunks[2].substr(idx,4)
+      }
+      let conf = chunks[2]//.split("'")[0]
+      for (let c in window.confs) {
+        if (conf.includes(c+" ")) {
+          e.conf = c
+          break
+        }
+      }
+      e.tags = []
+      for (let et of e.getElementsByTagName("small")) {
+        for (let c of et.innerText.split(","))
+          e.tags.push(c.trim())
+        et.innerHTML = e.tags.map(x => "<span>"+x+"</span>").join("  ")
+      }
+      if (e.tags.length == 0)
+        e.tags.push("Other")        
+      papers.push(e)
+      papersByYear[e.year] ??= []
+      papersByConf[e.conf] ??= []
+      papersByYear[e.year].push(e)
+      papersByConf[e.conf].push(e)
+      for (let c of e.tags) {
+        let [g,k] = c.split(":").map(x=>x.trim())
+        if (!k) k = "Other"
+        papersByTag[g] ??= {}
+        papersByTag[g][k] ??= []
+        papersByTag[g][k].push(e)
+      }
+    }
+  }
+  let target = document.getElementById("targetArea")
+  let str = ""
+  str += "<div>Filter by topic: "
+    str += "<a href='javascript:showAll()'>Show all ("+papers.length+")</a> "
+  for (let g in papersByTag) {
+    let m = 0
+    let str1 = ""
+    for (let k in papersByTag[g]) {
+      if (!papersByTag[g][k])
+        console.log(papersByTag[g], g, k)
+      let n = papersByTag[g][k].length
+      str1 += "<a href='javascript:clickTag(\""+g+"\", \""+k+"\")'>"+k+" ("+n+")</a> "
+      m += n
+    }
+    str += "<div><a href='javascript:clickGroup(\""+g+"\")'><b>"+g+":</b></a> "+str1+"</div>"
+  }
+  str += "</div>"
+  str += "<details><summary>More...</summary>"
+  str += "<div>By year:</br> "
+  for (let k in papersByYear) {
+    let n = papersByYear[k].length
+    str += "<a href='javascript:clickYear(\""+k+"\")'>"+k+" ("+n+")</a> "
+  }
+  str += "</div>"
+  str += "<div>By venue:</br> "
+  for (let k in papersByConf) {
+    let n = papersByConf[k].length
+    str += "<a href='javascript:clickConf(\""+k+"\")'>"+k+" ("+n+")</a> "
+  }
+  str += "</div>"
+  str += "</details>"
+  target.innerHTML = str
+}
+</script>
+
+<style>
+i {
+  font-weight: bold;
+}
+li small {
+  font-size: 9px;
+  color: grey;
+}
+li small span {
+  border: 1px solid #BBB;
+  border-radius: 5px;
+  padding: 2px;
+}
+/*li small:before {
+  content: "[";
+}
+li small:after {
+  content: "]";
+}*/
+#targetArea a {
+  font-size: 9px;
+/*  border: 1px solid grey;*/
+/*  border-radius: 5px;*/
+/*  padding: 0px 10px 0px 10px;*/
+}
+</style>
 
 
 
 
 <h4>Conferences/Workshops (Full Papers)</h4>
 
-2022
+<!-- TRs: Supun Arxiv, Prasita, LR RT... -->
 
+
+<div class="year">2024
+<ul>
+
+<li><i>
+Rhyme: A Data-Centric Expressive Query Language for Nested Data Structures.
+</i> 
+Supun Abeysinghe, Tiark Rompf.
+PADL '24.
+<small>Databases: Query Compilation, Databases: Multi-Paradigm, 
+Paradigms: Logic Programming</small>
+
+<li><i>
+Flan: An Expressive and Efficient Datalog Compiler for Program Analysis. 
+</i> 
+Supun Abeysinghe, Anxhelo Xhebraj, Tiark Rompf. 
+POPL '24.
+<small>Databases: Query Compilation, Databases: Multi-Paradigm, 
+Program Analysis: Datalog, Paradigms: Logic Programming</small>
+
+
+<li><i>
+Polymorphic Reachability Types: Tracking Aliasing and Separation in Higher-Order Generic Programs. 
+</i> 
+Guannan Wei, Oliver Bracevac, Songlin Jia, Yuyan Bao, Tiark Rompf. 
+POPL '24.
+<small>Type Systems: Reachability Types</small>
+
+</ul></div>
+
+
+<div class="year">2023
+<ul>
+
+<li><i>
+Efficient Composition of Data Management and Machine Learning Systems via Common Intermediate Layers.
+</i> 
+Supun Abeysinghe, Fei Wang, Gregory Essertel, Tiark Rompf.
+MAPS '23.
+<small>Compilers: ML Systems, Databases: Query Compilation, Databases: Multi-Paradigm</small>
+
+<li><i>
+Graph IRs for Impure Higher-Order Languages: Making Aggressive Optimizations Affordable with Precise Effect Dependencies.
+</i> 
+Oliver Bračevac, Guannan Wei, Songlin Jia, Supun Abeysinghe, Luke Jiang, Yuyan Bao, Tiark Rompf.
+OOPSLA '23.
+<small>Type Systems: Reachability Types, Compilers: Graph IRs</small>
+
+
+<li><i>
+Compiling Parallel Symbolic Execution with Continuations.
+</i> 
+Guannan Wei, Songlin Jia, Ruiqi Gao, Haotian Deng, Shangyin Tan, Oliver Bračevac, Tiark Rompf.
+ICSE '23.
+<small>Program Analysis: Symbolic Execution, Compilers: Continuations</small>
+
+</ul></div>
+
+
+<div class="year">2022
 <ul>
 
 <li><i>
 What if we Don't Pop the Stack? The Return of Second-Class Values.
 </i>
 Anxhelo Xhebraj, Oliver Bracevac, Guannan Wei, Tiark Rompf.
-ECOOP '22
+ECOOP '22.
+<small>Type Systems: 2nd-Class Values</small>
 
 <li><i>
 Efficient Incrementialization of Correlated Nested Aggregate Queries using Relative Partial Aggregate Indexes (RPAI).
 </i>
 Supun Abeysinghe, Qiyang He, Tiark Rompf.
-SIGMOD '22
+SIGMOD '22.
+<small>Databases: Query Compilation, Paradigms: Incremental Computation, 
+Other: Datastructures</small>
 
 <li><i>
 Towards Partially Evaluating Symbolic Interpreters for All.
 </i>
 Shangyin Tan, Guannan Wei, Tiark Rompf.
-PEPM '22
+PEPM '22.
+<small>Program Analysis: Symbolic Execution</small>
 
-</ul>
 
-2021
+</ul></div>
 
+<div class="year">2021
 <ul>
 
 <li><i>
 Prolog-Style Meta-Programming miniKanren.
 </i>
-Nada Amin, William E. Byrd, Tiark Rompf.
-miniKanren and Relational Programming Workshop '21
+Nada Amin, William E Byrd, Tiark Rompf.
+miniKanren '21.
+<small>Paradigms: Logic Programming</small>
+
 
 <li><i>
 On-Stack Replacement for Program Generators and Source-to-Source Compilers.
 </i>
 Gregory Essertel, Ruby Tahboub, Tiark Rompf.
-GPCE '21
+GPCE '21.
+<small>Compilers: On-Stack Replacement, Databases: Query Compilation, Metaprogramming: Other</small>
+
 
 <li><i>
-HACCLE: Metaprogramming for Secure Multi-party Computation.
+HACCLE: Metaprogramming for Secure Multi-Party Computation.
 </i>
 Yuyan Bao,
 Kirshanthan Sundararajah,
@@ -151,13 +447,16 @@ Benoit Meister,
 Jonathan Springer,
 Tiark Rompf,
 Milind Kulkarni.
-GPCE '21
+GPCE '21.
+<small>Other: Multi-Party Computation</small>
+
 
 <li><i>
 Reachability Types: Tracking Aliasing and Separation in Higher-Order Functional Programs.
 </i>
 Yuyan Bao, Guannan Wei, Oliver Bračevac, Yuxuan Jiang, Qiyang He, Tiark Rompf.
-OOPSLA '21
+OOPSLA '21.
+<small>Type Systems: Reachability Types</small>
 
 
 
@@ -165,54 +464,61 @@ OOPSLA '21
 LLSC: a parallel symbolic execution compiler for LLVM IR.
 </i>
 Guannan Wei, Shangyin Tan, Oliver Bračevac, Tiark Rompf.
-FSE '21
+FSE '21.
+<small>Program Analysis: Symbolic Execution</small>
 
 
-</ul>
+</ul></div>
 
 
-2020
-
+<div class="year">2020
 <ul>
 
 <li><i>
 Compiling Symbolic Execution with Staging and Algebraic Effects.
 </i>
 Guannan Wei, Oliver Bračevac, Shangyin Tan, Tiark Rrompf.
-OOPSLA '20
+OOPSLA '20.
+<small>Program Analysis: Symbolic Execution</small>
+
 
 <li><i>
 Architecting a Query Compiler for Spatial Workloads.
 </i>
 Ruby Tahboub, Tiark Rompf.
-SIGMOD '20
+SIGMOD '20.
+<small>Databases: Query Compilation</small>
 
-</ul>
+</ul></div>
 
 
 
-2019
-
+<div class="year">2019
 <ul>
 
 <li><i>
 Parallel Training via Computation Graph Transformation.
 </i>
 Fei Wang, Guoyang Chen, Weifeng Zhang, Tiark Rompf.
-IEEE Big Data '19
+IEEE Big Data '19.
+<small>Compilers: ML Systems</small>
+
 
 <li><i>
 Lightweight Functional Logic Meta-Programming.
 </i>
 Nada Amin, William Byrd, Tiark Rompf.
-APLAS '19
+APLAS '19.
+<small>Paradigms: Logic Programming</small>
+
 <!-- 20p, 22/50 -->
 
 <li><i>
 A Stage-Polymorphic IR for Compiling MATLAB-Style Dynamic Tensor Expressions.
 </i>
 Alen Stojanov, Tiark Rompf, Markus Püschel.
-GPCE '19
+GPCE '19.
+<small>Metaprogramming: Stage Polymorphism, Compilers: Arrays and Tensors, Compilers: ML Systems</small>
 <!-- 14p, 13/25 -->
 
 <li><i>
@@ -221,7 +527,8 @@ Staged Abstract Interpreters.
 Guannan Wei,
 Yuxuan Chen,
 Tiark Rompf.
-OOPSLA '19
+OOPSLA '19.
+<small>Program Analysis: Abstract Interpretation</small>
 <!-- 32 -->
 
 <li><i>
@@ -230,7 +537,8 @@ Precise Reasoning with Structured Time, Structured Heaps, and Collective Operati
 Gregory Essertel,
 Guannan Wei,
 Tiark Rompf.
-OOPSLA '19
+OOPSLA '19.
+<small>Program Analysis: Optimizing for Clarity</small>
 <!-- 30 -->
 
 
@@ -243,7 +551,8 @@ James Decker,
 Xilun Wu,
 Gregory Essertel,
 Tiark Rompf.
-ICFP '19
+ICFP '19.
+<small>Compilers: ML Systems, Paradigms: Differentiable Programming</small>
 <!-- 31 pages -->
 
 
@@ -254,7 +563,8 @@ Youyou Cong,
 Leo Osvald,
 Grégory Essertel,
 Tiark Rompf.
-ICFP '19
+ICFP '19.
+<small>Compilers: Continuations</small>
 <!-- 29 pages -->
 
 <li><i>
@@ -265,7 +575,8 @@ Fei Wang,
 Ziliang Chen,
 Guannan Wei,
 Tiark Rompf.
-Learning and Reasoning with Graph-Structured Data (ICML '19 Workshop)
+ICML Learning and Reasoning with Graph-Structured Data Workshop '19.
+<small>Other: Neurosymbolic Reasoning</small>
 <!-- 5 pages -->
 
 <li><i>
@@ -276,17 +587,19 @@ Ruby Tahboub,
 Fei Wang,
 James Decker,
 Tiark Rompf.
-VLDB '19 Demo Track
+VLDB Demo Track '19.
+<small>Compilers: ML Systems, Systems: Flare, Databases: Query Compilation</small>
 <!-- 4 pages -->
 
 <li><i>
 Towards compiling graph queries in relational engines.
 </i>
-Ruby Y. Tahboub,
+Ruby Y Tahboub,
 Xilun Wu,
 Gregory Essertel,
 Tiark Rompf.
-DBPL '19
+DBPL '19.
+<small>Databases: Query Compilation</small>
 <!-- 12 pages -->
 
 
@@ -294,351 +607,442 @@ DBPL '19
 AutoGraph: Imperative-Style Coding with Graph-Based Performance.
 </i>
 Dan Moldovan, James M Decker, Fei Wang, Andrew A Johnson, Brian K Lee, Zachary Nado, D Sculley, Tiark Rompf, Alexander B Wiltschko.
-SysML '19
+SysML '19.
+<small>Compilers: ML Systems</small>
 
 
-</ul>2018<ul>
+</ul></div>
+
+<div class="year">2018
+<ul>
 
 <li><i>
-Backpropagation with Callbacks: Towards Efficient and Expressive Differentiable Programming
+Backpropagation with Callbacks: Towards Efficient and Expressive Differentiable Programming.
 </i>
 Fei Wang, James Decker, Xilun Wu, Grégory Essertel, Tiark Rompf.
-NeurIPS '18
+NeurIPS '18.
+<small>Compilers: ML Systems, Paradigms: Differentiable Programming</small>
+
 
 <li><i>
 Flare: Optimizing Apache Spark for Scale-Up Architectures and Medium-Size Data.
 </i>
-Grégory Essertel, Ruby Tahboub, James Decker, Kevin J. Brown, Kunle Olukotun, Tiark Rompf.
-OSDI '18
+Grégory Essertel, Ruby Tahboub, James Decker, Kevin J Brown, Kunle Olukotun, Tiark Rompf.
+OSDI '18.
+<small>Compilers: ML Systems, Databases: Query Compilation</small>
 
 <li><i>
 Refunctionalization of Abstract Abstract Machines (Functional Pearl).
 </i>
 Guannan Wei, James Decker, Tiark Rompf.
-ICFP '18
+ICFP '18.
+<small>Program Analysis: Abstract Interpretation</small>
+
 
 <li><i>
 How to Architect a Query Compiler, Revisited.
 </i>
 Ruby Tahboub, Grégory Essertel, Tiark Rompf.
-SIGMOD '18
+SIGMOD '18.
+<small>Databases: Query Compilation</small>
+
 
 <li><i>
-SIMD Intrinsics on Managed Language Runtimes
+SIMD Intrinsics on Managed Language Runtimes.
 </i>
 Alen Stojanov, Ivaylo Toskov, Tiark Rompf, Markus Püschel.
-CGO '18
+CGO '18.
+<small>Compilers: SIMD, Compilers: JIT</small>
+
 
 <li><i>
 Collapsing Towers of Interpreters.
 </i>
 Nada Amin, Tiark Rompf.
-POPL '18
+POPL '18.
+<small>Metaprogramming: Collapsing Towers</small>
+
 <!-- <a href="https://www.cs.purdue.edu/~rompf/papers/amin-draft2017a.pdf">[pdf]</a> -->
 
 
-</ul>2017<ul>
+</ul></div>
+
+<div class="year">2017
+<ul>
 
 <li><i>
 Staging for Generic Programming in Space and Time.
 </i>
 Georg Ofenbeck, Tiark Rompf, Markus Püschel.
-GPCE '17
+GPCE '17.
+<small>Systems: LMS</small>
+
 
 <li><i>
 Rust-Like Borrowing with 2nd-Class Values (Short Paper).
 </i>
 Leo Osvald, Tiark Rompf.
-SCALA '17
+SCALA '17.
+<small>Type Systems: 2nd-Class Values</small>
+
 
 <li><i>
-Flexible Data Views: Design and Implementation
+Flexible Data Views: Design and Implementation.
 </i>
 Leo Osvald, Tiark Rompf.
-ARRAY '17
+ARRAY '17.
+<small>Compilers: Arrays and Tensors</small>
+
 
 <li><i>
 Towards Strong Normalization for Dependent Object Types (DOT).
 </i>
 Fei Wang, Tiark Rompf.
-ECOOP '17
+ECOOP '17.
+<small>Type Systems: DOT</small>
 
 <li><i>
-Composing middlebox and traffic engineering policies in SDNs
+Composing middlebox and traffic engineering policies in SDNs.
 </i>
 Yiyang Chang, Gustavo Petri, Sanjay Rao, Tiark Rompf.
-SWFAN '17 <!-- IEEE INFOCOM Workshop on Software-Driven Flexible and Agile Networking (SWFAN) -->
+SWFAN '17. <!-- IEEE INFOCOM Workshop on Software-Driven Flexible and Agile Networking (SWFAN) -->
+<small>Other: SDN</small>
 
 <li><i>
 Type Soundness Proofs with Definitional Interpreters.
 </i>
 Nada Amin, Tiark Rompf.
-POPL '17
+POPL '17.
+<small>Type Systems: Other</small>
 
 <li><i>
 LMS-Verify: Abstraction Without Regret for Verified Systems Programming.
 </i>
 Nada Amin, Tiark Rompf.
-POPL '17
+POPL '17.
+<small>Program Analysis: Verification</small>
 
 <li><i>
 Functional Parallels of Sequential Imperatives (Short Paper).
 </i>
-Tiark Rompf, Kevin J. Brown.
-PEPM '17
+Tiark Rompf, Kevin J Brown.
+PEPM '17.
+<small>Compilers: Other</small>
 
 
+</ul></div>
 
-</ul>2016<ul>
+<div class="year">2016
+<ul>
 
 <li><i>
 Reflections on LMS: Exploring Front-End Alternatives.
 </i>
 Tiark Rompf.
-SCALA '16
+SCALA '16.
+<small>Systems: LMS</small>
 
 <li><i>
 RandIR: Differential Testing for Embedded Compilers.
 </i>
 Georg Ofenbeck, Tiark Rompf, Markus Püschel.
-SCALA '16
+SCALA '16.
+<small>Program Analysis: Differential Testing</small>
 
 <li><i>
 On Supporting Compilation in Main-Memory Spatial Query Engines.
 </i>
 Ruby Tahboub, Grégory Essertel, Tiark Rompf.
-SIGSPATIAL '16
+SIGSPATIAL '16.
+<small>Databases: Query Compilation, Databases: Multi-Paradigm</small>
 
 <li><i>
 Type Soundness for Dependent Object Types (DOT).
 </i>
 Tiark Rompf, Nada Amin.
-OOPSLA '16
+OOPSLA '16.
+<small>Type Systems: DOT</small>
 
 <li><i>
 Gentrification Gone too Far? Affordable 2nd-Class Values for Fun and (Co-)Effect.
 </i>
-Leo Osvald, Grégory Essertel, Xilun Wu, Lilliam I. González-Alayón, Tiark Rompf.
-OOPSLA '16
+Leo Osvald, Grégory Essertel, Xilun Wu, Lilliam I González-Alayón, Tiark Rompf.
+OOPSLA '16.
+<small>Type Systems: 2nd-Class Values</small>
 
 <li><i>
 The Essence of Multi-Stage Evaluation in LMS.
 </i>
 Tiark Rompf.
-WadlerFest '16
+WadlerFest '16.
+<small>Systems: LMS, Metaprogramming: Other</small>
 
 <li><i>
 The Essence of Dependent Object Types.
 </i>
 Nada Amin, Samuel Gruetter, Martin Odersky, Tiark Rompf, Sandro Stucki.
-WadlerFest '16
+WadlerFest '16.
+<small>Type Systems: DOT</small>
 
 <li><i>
 Have Abstraction and Eat Performance Too: Optimized Heterogeneous Computing with Parallel Patterns.
 </i>
 Kevin Brown, Hyoukjoong Lee, Tiark Rompf, Arvind Sujeeth, Christopher De Sa, Christopher Aberger, Kunle Olukotun.
-CGO '16
+CGO '16.
+<small>Systems: Delite</small>
 
 
-</ul>2015<ul>
+</ul></div>
+
+<div class="year">2015
+<ul>
 
 <li><i>
 Functional Pearl: A SQL to C Compiler in 500 Lines of Code.
 </i>
 Tiark Rompf, Nada Amin.
-ICFP '15
+ICFP '15.
+<small>Databases: Query Compilation</small>
 <!--https://www.cs.purdue.edu/homes/rompf/papers/rompf-icfp15.pdf-->
 
 <li><i>
 RRB Vector: A Practical General Purpose Immutable Sequence.
 </i>
 Nicolas Stucki, Tiark Rompf, Vlad Ureche, Phil Bagwell.
-ICFP '15
+ICFP '15.
+<small>Other: Datastructures</small>
 
 <li><i>
 Go Meta! A Case for Generative Programming and DSLs in Performance Critical Systems.
 </i>
 Tiark Rompf, Kevin J Brown, HyoukJoong Lee, Arvind K Sujeeth, Manohar Jonnalagedda, Nada Amin, Georg Ofenbeck, Alen Stojanov, Yannis Klonatos, Mohammad Dashti, Christoph Koch, Markus Püschel, Kunle Olukotun.
-SNAPL '15
+SNAPL '15.
+<small>Systems: LMS</small>
 <!--http://drops.dagstuhl.de/opus/volltexte/2015/5029/pdf/19.pdf-->
 
 
 
-</ul>2014<ul>
+</ul></div>
+
+<div class="year">2014
+<ul>
 
 <li><i>
 Locality-Aware Mapping of Nested Parallel Patterns on GPUs.
 </i>
-HyoukJoong Lee, Kevin J. Brown, Arvind K. Sujeeth, Tiark Rompf, Kunle Olukotun.
-MICRO '14
+HyoukJoong Lee, Kevin J Brown, Arvind K Sujeeth, Tiark Rompf, Kunle Olukotun.
+MICRO '14.
+<small>Systems: Delite, Compilers: GPU</small>
 
 <li><i>
 Foundations of Path-Dependent Types.
 </i>
 Nada Amin, Tiark Rompf, Martin Odersky.
-OOPSLA '14
+OOPSLA '14.
+<small>Type Systems: DOT</small>
 
 <li><i>
 Staged Parser Combinators for Efficient Data Processing.
 </i>
 Manohar Jonnalagedda, Thierry Coppey, Sandro Stucki, Tiark Rompf, Martin Odersky.
-OOPSLA '14
+OOPSLA '14.
+<small>Systems: LMS, Other: Data Processing</small>
 
 <li><i>
 Hardware System Synthesis from Domain-Specific Languages.
 </i>
 Nithin George, Hyoukjoong Lee, David Novo, Tiark Rompf, Kevin Brown, Arvind Sujeeth, Martin Odersky, Kunle Olukotun and Paolo Ienne.
-FPL '14
+FPL '14.
+<small>Other: Hardware</small>
 
 <li><i>
 Computing with an SMT Solver.
 </i>
-Nada Amin, K. Rustan M. Leino, Tiark Rompf.
-TAP '14
+Nada Amin, K Rustan M Leino, Tiark Rompf.
+TAP '14.
+<small>Paradigms: SMT</small>
 
 <li><i>
 Abstracting Vector Architectures in Library Generators: Case Study Convolution Filters.
 </i>
 Alen Stojanov, Georg Ofenbeck, Tiark Rompf, Markus Püschel.
-ARRAY '14
+ARRAY '14.
+<small>Systems: LMS, Metaprogramming: Stage Polymorphism, Compilers: SIMD</small>
 
 <li><i>
 Building Efficient Query Engines in a High-Level Language.
 </i>
 Yannis Klonatos, Christoph Koch, Tiark Rompf, Hassan Chafi.
-VLDB '14 (Best Paper Award)
+VLDB '14. Best Paper Award.
+<small>Databases: Query Compilation</small>
 
 <li><i>
 Surgical Precision JIT Compilers.
 </i>
 Tiark Rompf, Arvind K Sujeeth, Kevin J Brown, HyoukJoong Lee, Hassan Chafi, Kunle Olukotun.
-PLDI '14
+PLDI '14.
+<small>Metaprogramming: Other, Compilers: JIT</small>
 
 
 
-</ul>2013<ul>
+</ul></div>
+
+<div class="year">2013
+<ul>
 
 <li><i>
 Making Domain-Specific Hardware Synthesis Tools Cost-Efficient.
 </i>
 Nithin George, David Novo, Tiark Rompf, Martin Odersky, Paolo Ienne.
-ICFPT '13
+ICFPT '13.
+<small>Other: Hardware</small>
 
 <li><i>
 Spiral in Scala: Towards the Systematic Construction of Generators for Performance Libraries.
 </i>
 Georg Ofenbeck, Tiark Rompf, Alen Stojanov, Martin Odersky, Markus Püschel.
-GPCE '13
+GPCE '13.
+<small>Systems: LMS, Systems: Spiral</small>
 
 <li><i>
 Forge: Generating a High Performance DSL Implementation from a Declarative Specification.
 </i>
 Arvind K Sujeeth, Austin Gibbons, Kevin J Brown, HyoukJoong Lee, Tiark Rompf, Martin Odersky, Kunle Olukotun.
-GPCE '13
+GPCE '13.
+<small>Systems: Delite</small>
 
 <li><i>
 What are the Odds? Probabilistic Programming in Scala.
 </i>
 Sandro Stucki, Nada Amin, Manohar Jonnalagedda, Tiark Rompf.
-Scala Workshop '13
+SCALA '13.
+<small>Paradigms: Probabilistic Programming</small>
 
 <li><i>
 Composition and Reuse with Compiled Domain-Specific Languages.
 </i>
-Arvind K. Sujeeth, Tiark Rompf, Kevin J. Brown, HyoukJoong Lee, Hassan Chafi, Victoria Popic, Michael Wu, Aleksander Prokopec, Vojin Jovanovic, Martin Odersky, Kunle Olukotun.
-ECOOP '13
+Arvind K Sujeeth, Tiark Rompf, Kevin J Brown, HyoukJoong Lee, Hassan Chafi, Victoria Popic, Michael Wu, Aleksander Prokopec, Vojin Jovanovic, Martin Odersky, Kunle Olukotun.
+ECOOP '13.
+<small>Systems: Delite</small>
 
 <li><i>
 Optimizing Data Structures in High-Level Programs: New Directions for Extensible Compilers based on Staging.
 </i>
-Tiark Rompf, Arvind K. Sujeeth, Nada Amin, Kevin J. Brown, Vojin Jovanovic, HyoukJoong Lee, Martin Odersky, Kunle Olukotun.
-POPL '13
+Tiark Rompf, Arvind K Sujeeth, Nada Amin, Kevin J Brown, Vojin Jovanovic, HyoukJoong Lee, Martin Odersky, Kunle Olukotun.
+POPL '13.
+<small>Systems: LMS, Compilers: Graph IRs</small>
 
 
 
-</ul>2012<ul>
+</ul></div>
+
+<div class="year">2012
+<ul>
 
 <li><i>
 Jet: An Embedded DSL for High Performance Big Data Processing.
 </i>
 Stefan Ackermann, Vojin Jovanovic, Tiark Rompf, Martin Odersky.
-BigData Workshop '12
+BigData '12.
+<small>Other: Data Processing</small>
 
 <li><i>
 JavaScript as an Embedded DSL.
 </i>
 Grzegorz Kossakowski, Nada Amin, Tiark Rompf, Martin Odersky.
-ECOOP '12
+ECOOP '12.
+<small>Systems: LMS, Other: JS</small>
 
 <li><i>
 Scala-Virtualized.
 </i>
 Adriaan Moors, Tiark Rompf, Philipp Haller, Martin Odersky.
-PEPM '12 (selected for HOSC special issue)
+PEPM '12. Selected for HOSC special issue.
+<small>Systems: LMS</small>
 
 <li><i>
 StagedSAC: A Case Study in Performance-Oriented DSL Development.
 </i>
 Vlad Ureche, Tiark Rompf, Arvind Sujeeth, Hassan Chafi, Martin Odersky.
-PEPM '12
+PEPM '12.
+<small>Compilers: Arrays and Tensors</small>
 
 
-</ul>2011<ul>
+</ul></div>
+
+<div class="year">2011
+<ul>
 
 <li><i>
 A Heterogeneous Parallel Framework for Domain-Specific Languages.
 </i>
-Kevin J. Brown, Arvind K. Sujeeth, HyoukJoong Lee, Tiark Rompf, Hassan Chafi, Martin Odersky, Kunle Olukotun.
-PACT '11
+Kevin J Brown, Arvind K Sujeeth, HyoukJoong Lee, Tiark Rompf, Hassan Chafi, Martin Odersky, Kunle Olukotun.
+PACT '11.
+<small>Systems: Delite</small>
 
 <li><i>
 Building-Blocks for Performance Oriented DSLs.
 </i>
-Tiark Rompf, Arvind K. Sujeeth, HyoukJoong Lee, Kevin J. Brown, Hassan Chafi, Martin Odersky, Kunle Olukotun.
-DSL '11
+Tiark Rompf, Arvind K Sujeeth, HyoukJoong Lee, Kevin J Brown, Hassan Chafi, Martin Odersky, Kunle Olukotun.
+DSL '11.
+<small>Systems: LMS, Systems: Delite</small>
 
 <li><i>
 A Generic Parallel Collection Framework.
 </i>
 Aleksandar Prokopec, Phil Bagwell, Tiark Rompf, Martin Odersky.
-Euro-Par '11
+Euro-Par '11.
+<small>Other: Datastructures</small>
 
 <li><i>
 OptiML: An Implicitly Parallel Domain-Specific Language for Machine Learning.
 </i>
-Arvind K. Sujeeth, HyoukJoong Lee, Kevin J. Brown, Tiark Rompf, Hassan Chafi, Michael Wu, Anand R. Atreya, Martin Odersky, Kunle Olukotun.
-ICML '11
+Arvind K Sujeeth, HyoukJoong Lee, Kevin J Brown, Tiark Rompf, Hassan Chafi, Michael Wu, Anand R Atreya, Martin Odersky, Kunle Olukotun.
+ICML '11.
+<small>Systems: LMS, Systems: Delite, Compilers: ML Systems</small>
 
 
-</ul>2010<ul>
+</ul></div>
+
+<div class="year">2010
+<ul>
 
 <li><i>
 Language Virtualization for Heterogeneous Parallel Computing.
 </i>
-Hassan Chafi, Zach DeVito, Adriaan Moors, Tiark Rompf, Arvind K. Sujeeth, Pat Hanrahan, Martin Odersky, Kunle Olukotun.
-Onward! '10
+Hassan Chafi, Zach DeVito, Adriaan Moors, Tiark Rompf, Arvind K Sujeeth, Pat Hanrahan, Martin Odersky, Kunle Olukotun.
+Onward! '10.
+<small>Systems: Delite</small>
 
 <li><i>
 Lightweight Modular Staging: A Pragmatic Approach to Runtime Code Generation and Compiled DSLs.
 </i>
 Tiark Rompf, Martin Odersky.
-GPCE '10 (selected as SIGPLAN CACM research highlight)
+GPCE '10. Selected as SIGPLAN CACM research highlight.
+<small>Systems: LMS, Compilers: Graph IRs</small>
 
 
-</ul>2009<ul>
+</ul></div>
+
+<div class="year">2009
+<ul>
 
 <li><i>
 Implementing First-Class Polymorphic Delimited Continuations by a Type-Directed Selective CPS-Transform.
 </i>
 Tiark Rompf, Ingo Maier, Martin Odersky.
-ICFP '09
+ICFP '09.
+<small>Type Systems: Other, Compilers: Continuations</small>
 
 <li><i>
 A Cryptographically t-Private Auction System.
 </i>
 Markus Hinkelmann, Andreas Jakoby, Nina Moebius, Tiark Rompf, Peer Stechert.
-NSS '09
-</ul>
+NSS '09.
+<small>Other: Multi-Party Computation</small>
+
+
+</ul></div>
 
 
 <h4>Workshops (Extended Abstracts)</h4>
@@ -648,38 +1052,43 @@ NSS '09
 A Language and Compiler View on Differentiable Programming.
 </i>
 Fei Wang, Tiark Rompf.
-ICLR Workshop Track 2018
+ICLR Workshop Track '18.
+<small>Compilers: ML Systems, Paradigms: Differentiable Programming</small>
 
 <li><i>
 Abstraction Without Regret for Efficient Data Processing.
 </i>
 Tiark Rompf, Nada Amin, Thierry Coppey, Mohammad Dashti, Manohar Jonnalagedda, Yannis Klonatos, Martin Odersky, Christoph Koch.
-DCP 2014
+DCP '14.
+<small>Other: Data Processing</small>
 
 <li><i>
 Language Support for the Construction of High Performance Code Generators.
 </i>
 Georg Ofenbeck, Tiark Rompf, Alen Stojanov, Martin Odersky, Markus Püschel.
-ADAPT 2014
+ADAPT '14.
+<small>Systems: LMS, Systems: Spiral</small>
 
 <li><i>
 Mind the Gap: Artifacts vs Insights in PL Theory.
 </i>
 Nada Amin, Tiark Rompf.
-OBT 2014
+OBT '14.
 
 <li><i>
 Delite: A Compiler Framework for High-Performance Embedded DSLs.
 </i>
-Tiark Rompf, Arvind K. Sujeeth, Kevin J. Brown, HyoukJoong Lee, Hassan Chafi, Martin Odersky, Kunle Olukotun.
-DSLFIN 2013
+Tiark Rompf, Arvind K Sujeeth, Kevin J Brown, HyoukJoong Lee, Hassan Chafi, Martin Odersky, Kunle Olukotun.
+DSLFIN '13.
+<small>Systems: Delite</small>
 <!-- Workshop on DSLs in Finance -->
 
 <li><i>
 Crossing the Software-Hardware Chasm with DSLs.
 </i>
-Arvind K. Sujeeth, Tiark Rompf, HyoukJoong Lee, Kevin J. Brown, Hassan Chafi, Martin Odersky, Kunle Olukotun.
-OBT 2013
+Arvind K Sujeeth, Tiark Rompf, HyoukJoong Lee, Kevin J Brown, Hassan Chafi, Martin Odersky, Kunle Olukotun.
+OBT '13.
+<small>Other: Hardware</small>
 
 </ul>
 
@@ -693,8 +1102,9 @@ From Gameplay to Symbolic Reasoning: Learning SAT Solver Heuristics in the Style
 </i>
 Fei Wang, Tiark Rompf.
 Technical Report, Purdue University, 2018
-<a href="https://arxiv.org/pdf/1802.05340">[arxiv]</a>
-<a href="https://arxiv.org/pdf/1802.05340.pdf">[pdf]</a>
+<a href="https://arxiv.org/pdf/1802.05340">[arXiv]</a>
+<a href="https://arxiv.org/pdf/1802.05340.pdf">[pdf]</a>.
+<small>Other: Neurosymbolic Reasoning</small>
 
 
 <li><i>
@@ -702,7 +1112,7 @@ From F to DOT: Type Soundness Proofs with Definitional Interpreters.
 </i>
 Tiark Rompf, Nada Amin.
 Technical Report, Purdue University, 2015
-<a href="http://arxiv.org/abs/1510.05216">[arxiv]</a>
+<a href="http://arxiv.org/abs/1510.05216">[arXiv]</a>
 <a href="http://arxiv.org/pdf/1510.05216.pdf">[pdf]</a>
 
 <li><i>
@@ -729,42 +1139,50 @@ A SQL to C Compiler in 500 Lines of Code.
 </i>
 Tiark Rompf, Nada Amin.
 Journal of Functional Programming, Volume 29, 2019.
+<small>Databases: Query Compilation</small>
 
 <li><i>
 Unifying Functional and Object-Oriented Programming with Scala.
 </i>
 Martin Odersky, Tiark Rompf.
-Commun. ACM: April 2014
+Commun ACM: April 2014.
+<small>Systems: Scala</small>
 
 <li><i>
 Delite: A Compiler Architecture for Performance-Oriented Embedded Domain-Specific Languages.
 </i>
-Arvind K. Sujeeth, Kevin J. Brown, HyoukJoong Lee, Tiark Rompf, Hassan Chafi, Martin Odersky, Kunle Olukotun.
-ACM Trans. on Embedded Computing Systems (TECS), Volume 13, Issue 4s, April 2014.
+Arvind K Sujeeth, Kevin J Brown, HyoukJoong Lee, Tiark Rompf, Hassan Chafi, Martin Odersky, Kunle Olukotun.
+ACM Trans on Embedded Computing Systems (TECS), Volume 13, Issue 4s, April 2014.
+<small>Systems: Delite</small>
 
 <li><i>
 Scala-Virtualized: Linguistic Reuse for Deep Embeddings.
 </i>
 Tiark Rompf, Nada Amin, Adriaan Moors, Philipp Haller, Martin Odersky.
-Higher-Order and Symbolic Computation, September 2013
+Higher-Order and Symbolic Computation, September 2013.
+<small>Systems: Scala</small>
 
 <li><i>
 Lightweight Modular Staging: A Pragmatic Approach to Runtime Code Generation and Compiled DSLs.
 </i>
 Tiark Rompf, Martin Odersky.
-Commun. ACM 55(6): 121-130 (2012)
+Commun ACM 55(6): 121-130 (2012).
+<small>Systems: LMS, Compilers: Graph IRs</small>
 
 <li><i>
 Implementing Domain-Specific Languages for Heterogeneous Parallel Computing.
 </i>
-HyoukJoong Lee, Kevin J. Brown, Arvind K. Sujeeth, Hassan Chafi, Tiark Rompf, Martin Odersky, Kunle Olukotun.
-IEEE Micro: Special Issue on CPU, GPU, and Hybrid Computing, September/October 2011
+HyoukJoong Lee, Kevin J Brown, Arvind K Sujeeth, Hassan Chafi, Tiark Rompf, Martin Odersky, Kunle Olukotun.
+IEEE Micro: Special Issue on CPU, GPU, and Hybrid Computing, September/October 2011.
+<small>Systems: Delite, Compilers: GPU</small>
 
 <li><i>
 Markus Hinkelmann, Andreas Jakoby, Nina Moebius, Tiark Rompf, Peer Stechert.
 </i>
 A Cryptographically t-Private Auction System.
-Concurrency and Computation: Practice and Experience 23(12): 1399-1413 (2011)
+Concurrency and Computation: Practice and Experience 23(12): 1399-1413 (2011).
+<small>Other: Multi-Party Computation</small>
+
 </ul>
 
 
@@ -793,6 +1211,8 @@ Master Thesis, Institute of Software Technology and Programming Languages, Unive
 
       </section>
       <footer>
+<div id="targetArea">
+</div>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>

@@ -25,14 +25,15 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Tiark &nbsp;Rompf</h1>
+        <p><img style="display: block; margin:auto; width:15em; border-radius: 50%;" src="pic-new.jpg"></p>
 
-        <p><img style="width:15em" src="pic.png"></p>
+        <h1 style="text-align:center; margin-bottom:.5ex">Tiark&nbsp;Rompf</h1>
 
+        <p style="text-align:center;">Purdue University, Department of Computer Science</p>
         <!-- <h3>Find me here:</h3>
         <p class="view"></p> -->
 
-        <ul>
+        <ul style="display: block; margin:auto; width:fit-content;">
 <!--          <li><a href="https://purduepl.github.io">Purdue PL Group (PurPL)</a> -->
           <li><a href="https://www.cs.purdue.edu/people/faculty/rompf/">firstname@purdue.edu</a>
           <li><a href="http://scholar.google.com/citations?user=L8zhVsMAAAAJ&hl=en">google scholar</a>,
@@ -51,7 +52,7 @@
 
 <p><a href="index.html">Home</a>
  | <a href="research.html">Research</a>
- | <a href="notes/">Notes</a>
+ | <a href="notes/">Blog</a>
  | <a href="publications.html">Publications</a>
  | <a href="talks.html">Talks</a>
  | <a href="group.html">Group</a>
@@ -98,16 +99,38 @@ architecture, databases, systems, machine learning, and AI.</p>
 <p>I'm co-directing the <a href="https://purpl.cs.purdue.edu">Purdue Center for Programming Principles and Software Systems (PurPL)</a>.
 I am also a Scientific Advisor at <a href="https://sambanova.ai">SambaNova Systems</a>.</p>
 
-<p><strong><span style="color:red">I'm actively recruiting PhD students and post-docs.</span> </strong><br/>
-  <strong>Purdue is <a style="font-weight:bold" href="http://csrankings.org/#/fromyear/2013/toyear/2019/index?plan&soft">ranked #2 in PL+SE</a> on csrankings.org. Apply <a style="font-weight:bold" href="https://www.cs.purdue.edu/graduate/index.html">here</a>.</strong></p>
-
-<p><strong><span style="color:red">I'm also recruiting summer interns.</span> </strong><br/>
-  <strong>Check out Purdue's <a style="font-weight:bold" href="https://www.cs.purdue.edu/internships/go-boiler/index.html">GoBoiler program</a>.</strong></p>
-
-<p>Overview materials: <a href="https://www.cs.purdue.edu/~rompf/cv.pdf">CV (pdf)</a>
+<p>Academic materials: <a href="https://www.cs.purdue.edu/~rompf/cv.pdf">CV (pdf)</a>
  | <a href="https://www.cs.purdue.edu/~rompf/research.pdf">Research (pdf)</a>
  | <a href="https://www.cs.purdue.edu/~rompf/teaching.pdf">Teaching (pdf)</a>
+</br>
+Digital garden: <a href="https://tiarkrompf.github.io/notes/">blog posts and interactive notes</a>
 </p>
+
+<!-- <p>Some <a href="https://tiarkrompf.github.io/notes/">notes/blog posts</a> on things I find interesting.</p> -->
+
+
+<h2>Research</h2>
+
+<p><strong><span style="color:red">I'm actively recruiting PhD students and post-docs to work on the following projects:</span> </strong><br/>
+
+<ul>
+  <li><strong><a style="font-weight:bold" href="https://github.com/tiarkrompf/reachability">Reachability Types:</a></strong> How can we bring the benefits of Rust-style tracking of lifetimes and sharing to higher-level languages?</br>
+    <small><strong>Keywords:</strong> Scala, Coq, Mechanized Proofs, Logical Relations</small></br>
+    <small><strong>Papers:</strong> POPL'24, OOPSLA'23, OOPSLA'21</small></br>
+  </li>
+  <li><strong><a style="font-weight:bold" href="https://github.com/rhyme-lang">Rhyme:</a></strong> How can we design expressive languages and efficient compiler toolchains for high-level data processing?</br>
+  <small><strong>Keywords:</strong> Datalog, Graph IRs, E-Graphs, Incremental/Bidirectional Computation</small></br>
+    <small><strong>Papers:</strong> PADL'24, POPL'24, SIGMOD'22, JFP'19, OSDI'18, SIGMOD'18 </small></br>
+  </li>
+</ul>
+
+
+
+  <strong>Purdue is <a style="font-weight:bold" href="http://csrankings.org/#/fromyear/2013/toyear/2023/index?plan&soft">ranked #3 in PL+SE</a> on csrankings.org. Apply <a style="font-weight:bold" href="https://www.cs.purdue.edu/graduate/index.html">here</a>.</strong></p>
+
+<!--<p><strong><span style="color:red">I'm also recruiting summer interns.</span> </strong><br/>
+  <strong>Check out Purdue's <a style="font-weight:bold" href="https://www.cs.purdue.edu/internships/go-boiler/index.html">GoBoiler program</a>.</strong></p> -->
+
 
 <!-- <p>My work spans language design, metaprogramming, program analysis, program transformation, program generation and synthesis, type systems, and semantics.</p> -->
 
@@ -132,11 +155,19 @@ I am interested in bringing theoretical insights into practical use, and also in
 
 <!-- Tenure, SIGMOD & OOPSLA 2020, GPCE Most Influential Paper Award -->
 
-<p>Some <a href="https://tiarkrompf.github.io/notes/">notes/blog posts</a> on things I find interesting.</p>
+
 
 <h2>News</h2>
 <ul>
+<li>October 2023: New papers on Datalog and Rhyme: (1) <a href="">Flan: An Expressive and Efficient Datalog Compiler for Program Analysis</a> at POPL, (2) <a href="">Rhyme: A Data-Centric Expressive Query Language for Nested Data Structures</a> at PADL
+<li>November 2023: Congratulations to <a href="https://www.supun.online">Supun Abeysinghe</a> on defending his PhD thesis titlted <a href="">Compilation Techniques, Algorithms, and Data Structures for Efficient and Expressive Data Processing Systems</a>! 
+<li>October 2023: New papers on Reachability Types: (1) <a href="">Graph IRs for Impure Higher-Order Languages: Making Aggressive Optimizations Affordable with Precise Effect Dependencies</a> at OOPSLA, (2) <a href="">Polymorphic Reachability Types: Tracking Freshness, Aliasing, and Separation in Higher-Order Generic Programs</a> at POPL and (3) on ArXiv <a href="https://arxiv.org/abs/2309.05885">Modeling Rechability Types with Logical Relations</a>
+<li>August 2023: Congratulations to <a href="https://continuation.passing.style">Guannan Wei</a> on defending his PhD thesis titled <a href="https://hammer.purdue.edu/articles/thesis/Metaprogramming_Program_Analyzers/23750805">Metaprogramming Program Analyzers</a>! 
+<li>June 2023: New paper on Symbolic Execution: <a href="https://continuation.passing.style/static/papers/icse23.pdf">Compiling Parallel Symbolic Execution with Continuations</a> at ICSE
+<li>April 2022: New paper on Incremental Computation at SIGMOD: <a href="https://www.cs.purdue.edu/homes/rompf/papers/abeysinghe-sigmod22.pdf">Efficient Incrementialization of Correlated Nested Aggregate Queries using Relative Partial Aggregate Indexes (RPAI)</a> 
+
 <!-- TODO -->
+<!--
 <li>November 2020: GPCE Test of Time Award (for <a href="https://infoscience.epfl.ch/record/150347">LMS</a>)
 <li>August 2020: Promoted to Associate Professor. I'm no longer permitted to update my web page, ever ;-)
 <li>July 2020: New papers at SIGMOD: <a href="https://www.cs.purdue.edu/homes/rompf/papers/tahboub-sigmod20.pdf">Architecting a Query Compiler for Spatial Workloads</a> and OOPSLA: <a href="https://www.cs.purdue.edu/homes/rompf/papers/wei-oopsla20.pdf">Compiling Symbolic Execution with Staging and Algebraic Effects</a>
@@ -156,6 +187,7 @@ I am interested in bringing theoretical insights into practical use, and also in
 <li>December 2018: <a href="https://octo.vmware.com/vmware-announces-the-2018-systems-research-award-recipient/">VMware 2018 Systems Research Award</a>
 <li>September 2018: New paper: <a href="https://www.cs.purdue.edu/homes/rompf/papers/essertel-osdi18.pdf">Flare: Optimizing Apache Spark for Scale-Up Architectures and Medium-Size Data</a> (OSDI'18), earlier video from Spark Summit: <a href="https://www.youtube.com/watch?v=SY54g0apKKg"/a>Flare: Scale up Spark SQL with native compilation and set your data on fire!</a>
 <li>August 2018: Seminar on <a href="https://tiarkrompf.github.io/cs590/2018/">Deep Learning for Symbolic Reasoning</a>
+-->
 
 <!--
 <li>December 2018: I'm thrilled to be the recipient of the <a href="https://octo.vmware.com/vmware-announces-the-2018-systems-research-award-recipient/">VMware 2018 Systems Research Award</a>!
@@ -235,10 +267,10 @@ metaprogramming and program generation (<a href="http://tiarkrompf.github.io/cs5
 <ul>
 
 <li><a href="https://www.cs.purdue.edu/~rompf/papers">Drafts and preprints</a>
-<li>Papers: OOPSLA'20, SIGMOD'20, OOPSLA'19 (2x), ICFP'19 (2x), SYSML'19, NeurIPS'18, OSDI'18, ICFP'18, SIGMOD'18, POPL'18, ECOOP'17, POPL'17 (2x), OOPSLA'16 (2x), ICFP'15 (2x), MICRO'14, OOPSLA'14 (2x), PLDI'14, VLDB'14, POPL'13
-<li>PC chairing: GPCE'18, DBPL'17, PEPM'16, FHPC'15, WGP'14; member: PLDI'20 (ERC), POPL'20, ICFP'19 (ERC), OOPSLA'19, CC'19, OOPSLA'18 (ERC), VLDB'18, PLDI'18, ECOOP'17, POPL'16, OOPSLA'15, PLDI'15, GPCE'16,'15,'14, ICFP'14
+<li>Papers: POPL'24 (2x), OOPSLA'23, ICSE'23, ECOOP'22, SIGMOD'22, OOPSLA'21, FSE'21, OOPSLA'20, SIGMOD'20, OOPSLA'19 (2x), ICFP'19 (2x), SYSML'19, NeurIPS'18, OSDI'18, ICFP'18, SIGMOD'18, POPL'18, ECOOP'17, POPL'17 (2x), OOPSLA'16 (2x), ICFP'15 (2x), MICRO'14, OOPSLA'14 (2x), PLDI'14, VLDB'14, POPL'13
+<li>PC chairing: GPCE'18, DBPL'17, PEPM'16, FHPC'15, WGP'14; member: POPL'24, OOPSLA'24, PLDI'20 (ERC), POPL'20, ICFP'19 (ERC), OOPSLA'19, CC'19, OOPSLA'18 (ERC), VLDB'18, PLDI'18, ECOOP'17, POPL'16, OOPSLA'15, PLDI'15, GPCE'16,'15,'14, ICFP'14
 <li>Awards: GPCE Test of Time Award 2020, ACM SIGPLAN PL Software Award 2019, Facebook Research Award 2019, VMware Systems Research Award 2018, DOE Early Career Research Award 2017, Google Faculty Research Award 2017 and 2018, NSF CAREER Award 2016
-<li>Teaching: <a href="http://tiarkrompf.github.io/cs590/2018">CS 590</a> deep learning for symbolic reasoning (2018), <a href="http://tiarkrompf.github.io/cs352">CS 352</a> compilers (2020, 2018, 2017, 2015), <a href="http://tiarkrompf.github.io/cs502">CS 502</a> grad compilers (2015, 2019)</a>, <a href="http://tiarkrompf.github.io/cs352">CS 565</a> software foundations (2016, 2015), <a href="http://tiarkrompf.github.io/cs590/2014">CS 590</a> metaprogramming (2014)
+<li>Teaching: <a href="http://tiarkrompf.github.io/cs590/2021">CS 590</a> advanced topics in compilers (2021), <a href="http://tiarkrompf.github.io/cs590/2018">CS 590</a> deep learning for symbolic reasoning (2018), <a href="http://tiarkrompf.github.io/cs352">CS 352</a> compilers (2024, 2022, 2020, 2018, 2017, 2015), <a href="http://tiarkrompf.github.io/cs502">CS 502</a> grad compilers (2023, 2019, 2015)</a>, <a href="http://tiarkrompf.github.io/cs352">CS 565</a> software foundations (2016, 2015), <a href="http://tiarkrompf.github.io/cs590/2014">CS 590</a> metaprogramming (2014)
 </ul>
 
 

@@ -25,14 +25,15 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Tiark &nbsp;Rompf</h1>
+        <p><img style="display: block; margin:auto; width:15em; border-radius: 50%;" src="pic-new.jpg"></p>
 
-        <p><img style="width:15em" src="pic.png"></p>
+        <h1 style="text-align:center; margin-bottom:.5ex">Tiark&nbsp;Rompf</h1>
 
+        <p style="text-align:center;">Purdue University, Department of Computer Science</p>
         <!-- <h3>Find me here:</h3>
         <p class="view"></p> -->
 
-        <ul>
+        <ul style="display: block; margin:auto; width:fit-content;">
 <!--          <li><a href="https://purduepl.github.io">Purdue PL Group (PurPL)</a> -->
           <li><a href="https://www.cs.purdue.edu/people/faculty/rompf/">firstname@purdue.edu</a>
           <li><a href="http://scholar.google.com/citations?user=L8zhVsMAAAAJ&hl=en">google scholar</a>,
@@ -51,7 +52,7 @@
 
 <p><a href="index.html">Home</a>
  | <a href="research.html">Research</a>
- | <a href="notes/">Notes</a>
+ | <a href="notes/">Blog</a>
  | <a href="publications.html">Publications</a>
  | <a href="talks.html">Talks</a>
  | <a href="group.html">Group</a>
@@ -113,17 +114,18 @@ From F to DOT: Type Soundness Proofs with Definitional Interpreters
 -->
 
 <p>Most of my work revolves around <a href="http://scala-lms.github.io">Lightweight Modular Staging (LMS)</a>,
-a platform and methodology for integrating runtime code generation into high-level programs and especially for building embedded compilers for domain specific languages (DSLs). <a href="http://ppl.stanford.edu/Delite">Delite</a> is a compiler framework jointly developed with Kunle Olukotun's group at the Stanford Pervasive Parallelism Lab.
-At Oracle Labs (2012-2014) I started <a href="http://github.com/tiarkrompf/lancet">Project Lancet</a>, which aims to turn JIT compilers into precision tools in future JVM generations. I am also applying LMS to speed up data processing and query engines.
-The most recent work in this direction is <a href="http://flaredata.github.io">Flare</a>, an accelerator back-end for Apache Spark that achieves order of magnitude speedups by compiling SQL and data frame queries to native code.</p>
+a platform and methodology for integrating runtime code generation into high-level programs and especially for building embedded compilers for domain specific languages (DSLs). In the early days, I helped build <a href="http://ppl.stanford.edu/Delite">Delite</a>, a compiler framework jointly developed with Kunle Olukotun's group at the Stanford Pervasive Parallelism Lab.
+At Oracle Labs (2012-2014) I started <a href="http://github.com/tiarkrompf/lancet">Project Lancet</a>, which aims to turn JIT compilers into precision tools in future JVM generations. More recently, I have been applying LMS to speed up data processing and query engines.
+A key recent work in this direction is <a href="http://flaredata.github.io">Flare</a>, an accelerator back-end for Apache Spark that achieves order of magnitude speedups by compiling SQL and data frame queries to native code.</p>
 
 <p>This whole area is seeing a surge of interest with the proliferation of AI systems based on <a href="https://openreview.net/forum?id=SJxJtYkPG">computation graphs and automatic differentiation</a>. Our project <a href="https://github.com/feiwang3311/Lantern/">Lantern</a> is a new take on deep learning frameworks <a href="https://arxiv.org/pdf/1803.10228.pdf">based on LMS and delimited continuations</a>, combining the benefits of TensorFlow and PyTorch. I am also interested in applying deep learning techniques to formal reasoning, in particular casting symbolic problems like program synthesis and proof search as <a href="https://arxiv.org/abs/1802.05340">gameplay in the style of AlphaGo.</a>
 </p>
 
+<p>As a member of the Scala team from 2008 to 2014 (lead by Martin Odersky at EPFL), my contributions to <a href="http://www.scala-lang.org">Scala</a> include delimited continuations, efficient immutable data structures (Set, Map, Vector) and speedups in the Scala compiler (type checking, implicit search, bytecode generation; up to 3x for certain projects). I also started the <a href="https://github.com/tiarkrompf/scala-virtualized">Scala-Virtualized</a> research branch. More recently I helped formalize parts of Scala's type system in the <a href="https://github.com/tiarkrompf/minidot">DOT</a> calculus, leading to the first mechanized soundness proof of DOT.</p>
 
-<p>As a member of Martin Odersky's Scala team from 2008 to 2014, my contributions to <a href="http://www.scala-lang.org">Scala</a> include delimited continuations, efficient immutable data structures (Set, Map, Vector) and speedups in the Scala compiler (type checking, implicit search, bytecode generation; up to 3x for certain projects). I also started the <a href="https://github.com/tiarkrompf/scala-virtualized">Scala-Virtualized</a> research branch. More recently I helped formalize parts of Scala's type system in the <a href="https://github.com/tiarkrompf/minidot">DOT</a> calculus, leading to the first mechanized soundness proof of DOT.</p>
+<p>My group and I have proposed a notion of <a href="http://github.com/tiarkrompf/reachability">Reachability Types</a>, which promise to bring the benefits of Rust-style tracking of lifetimes and sharing to higher-level languages that make pervasive use of type-level and functional abstraction.
 
-<p>I received an MS in computer science from University of Lübeck (2008) and a PhD from EPFL (2012). Before my PhD I co-founded two startups and lead software projects outside of academia, ranging from CAD software for kitesurfing equipment to hospital systems for electronic anesthesia records, image processing for OCT workstations, and therapeutic games.</p>
+<p>I received an MS in computer science from University of Lübeck (2008) and a PhD from EPFL (2012). Before my PhD I co-founded two startups and lead software projects ranging from CAD software for kitesurfing equipment to hospital systems for electronic anesthesia records, image processing for OCT workstations, and therapeutic games.</p>
 
 
 
